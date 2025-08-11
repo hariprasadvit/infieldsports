@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///turbopack:///[project]/src/app/components/LandingPage/ThirdSection/Volumes/Batman/Projects/InFiledSportsBB/infield-sports-fe/src/app/components/LandingPage/ThirdSection/styles.module.scss"],"sourcesContent":[".thirdSection {\n    margin-bottom: 136px;\n\n    .pageCenter {\n        max-width: 1400px;\n    }\n\n    h2 {\n        display: inline-block;\n        background: linear-gradient(135deg, #FFF 0%, #71717A 100%);\n        background-clip: text;\n        -webkit-background-clip: text;\n        -webkit-text-fill-color: transparent;\n        font-size: 48.2px;\n        font-weight: 700;\n        line-height: 51.36px;\n        letter-spacing: -1.2px;\n        margin-bottom: 30px;\n    }\n\n\n    .repeatSection {\n        max-width: 1350px;\n        width: 100%;\n\n        .repeatItem {\n            border: 1px solid #a1aebf;\n            border-radius: 10px;\n            margin: 10px;\n            padding: 16px;\n            max-width: 200px;\n        }\n    }\n}"],"names":[],"mappings":"AAAA;;;;AAGI;;;;AAIA;;;;;;;;;;;;;AAcA;;;;;AAII"}}]
+}

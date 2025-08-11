@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///turbopack:///[project]/src/app/components/common/Header.js/Volumes/Batman/Projects/InFiledSportsBB/infield-sports-fe/src/app/components/common/Header.js/styles.module.scss"],"sourcesContent":[".header {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    position: fixed;\n    top: 0;\n    right: 0;\n    left: 0;\n    margin: 0 auto;\n    transition: all 0.3s ease;\n    z-index: 1000;\n\n    .pageCenter {\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n        padding: 50px 0;\n        transition: padding 0.3s ease;\n    }\n\n    nav ul {\n        display: flex;\n        gap: 60px;\n        align-items: center;\n\n        li a {\n            color: #fff;\n            text-align: center;\n            font-size: 14px;\n            font-weight: 400;\n\n            &:hover,\n            &.active {\n                text-decoration: underline;\n            }\n        }\n    }\n}\n\n.scrolled {\n    background: #000;\n    border-bottom: 1px solid #cccccc3d;\n\n    .pageCenter {\n        padding: 10px 0;\n    }\n}"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;AAYI;;;;;;;;AAQA;;;;;;AAKI;;;;;;;AAMI;;;;AAQZ;;;;;AAII"}}]
+}

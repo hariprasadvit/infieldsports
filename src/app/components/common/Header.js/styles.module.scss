@@ -1,0 +1,47 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    z-index: 1000;
+
+    .pageCenter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px 0;
+        transition: padding 0.3s ease;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 60px;
+        align-items: center;
+
+        li a {
+            color: #fff;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 400;
+
+            &:hover,
+            &.active {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.scrolled {
+    background: #000;
+    border-bottom: 1px solid #cccccc3d;
+
+    .pageCenter {
+        padding: 10px 0;
+    }
+}

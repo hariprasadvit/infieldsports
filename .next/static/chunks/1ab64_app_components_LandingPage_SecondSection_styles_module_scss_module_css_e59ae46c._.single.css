@@ -1,0 +1,108 @@
+/* [project]/src/app/components/LandingPage/SecondSection/styles.module.scss.module.css [app-client] (css) */
+.styles-module-scss-module__vVoEPG__secondSection {
+  margin-bottom: 136px;
+}
+
+.styles-module-scss-module__vVoEPG__secondSection h2 {
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  letter-spacing: -1.2px;
+  background: linear-gradient(135deg, #fff 0%, #71717a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-bottom: 30px;
+  font-size: 48.2px;
+  font-weight: 700;
+  line-height: 51.36px;
+  display: inline-block;
+}
+
+.styles-module-scss-module__vVoEPG__secondSection p.styles-module-scss-module__vVoEPG__desc {
+  color: rgba(161, 161, 170, .8);
+  max-width: 550px;
+  margin-bottom: 100px;
+  font-size: 17.9px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.styles-module-scss-module__vVoEPG__secondSection p.styles-module-scss-module__vVoEPG__desc span {
+  color: #e4e4e7;
+}
+
+.styles-module-scss-module__vVoEPG__secondSection .styles-module-scss-module__vVoEPG__repeatSection {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  display: flex;
+}
+
+.styles-module-scss-module__vVoEPG__secondSection .styles-module-scss-module__vVoEPG__repeatSection .styles-module-scss-module__vVoEPG__repeatItem {
+  color: #fff;
+  background-blend-mode: overlay;
+  background: rgba(55, 55, 55, .2);
+  border: 1px solid #000;
+  border-radius: 50px;
+  width: 100%;
+  max-width: 365px;
+  padding: 35px 55px;
+  position: relative;
+  overflow: hidden;
+}
+
+.styles-module-scss-module__vVoEPG__secondSection .styles-module-scss-module__vVoEPG__repeatSection .styles-module-scss-module__vVoEPG__repeatItem:before {
+  content: "";
+  border-radius: inherit;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+  background: linear-gradient(360deg, #8dc231, #000);
+  padding: 1px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-mask-image: linear-gradient(#fff 0, #fff 0), linear-gradient(#fff 0, #fff 0);
+  -webkit-mask-position: 0 0, 0 0;
+  -webkit-mask-size: auto, auto;
+  -webkit-mask-repeat: repeat, repeat;
+  -webkit-mask-clip: content-box, border-box;
+  -webkit-mask-origin: content-box, border-box;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  -webkit-mask-source-type: auto, auto;
+  mask-mode: match-source, match-source;
+}
+
+.styles-module-scss-module__vVoEPG__secondSection .styles-module-scss-module__vVoEPG__repeatSection .styles-module-scss-module__vVoEPG__repeatItem .styles-module-scss-module__vVoEPG__imgWrap {
+  background: url("../media/secondSec.99734324.svg") center no-repeat;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  width: 79px;
+  height: 79px;
+  margin-bottom: 70px;
+  display: flex;
+}
+
+.styles-module-scss-module__vVoEPG__secondSection .styles-module-scss-module__vVoEPG__repeatSection .styles-module-scss-module__vVoEPG__repeatItem .styles-module-scss-module__vVoEPG__imgWrap img {
+  width: 31px;
+  height: 31px;
+}
+
+.styles-module-scss-module__vVoEPG__secondSection .styles-module-scss-module__vVoEPG__repeatSection .styles-module-scss-module__vVoEPG__repeatItem h5 {
+  color: #e4e4e7;
+  margin-bottom: 15px;
+  font-size: 17.9px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.styles-module-scss-module__vVoEPG__secondSection .styles-module-scss-module__vVoEPG__repeatSection .styles-module-scss-module__vVoEPG__repeatItem p {
+  color: rgba(161, 161, 170, .8);
+  font-size: 13.9px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/*# sourceMappingURL=1ab64_app_components_LandingPage_SecondSection_styles_module_scss_module_css_e59ae46c._.single.css.map*/

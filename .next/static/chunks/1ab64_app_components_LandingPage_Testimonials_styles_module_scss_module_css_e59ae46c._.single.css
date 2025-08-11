@@ -1,0 +1,104 @@
+/* [project]/src/app/components/LandingPage/Testimonials/styles.module.scss.module.css [app-client] (css) */
+.styles-module-scss-module__7lV2qa__testimonials {
+  margin-bottom: 136px;
+}
+
+.styles-module-scss-module__7lV2qa__testimonials h2 {
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  letter-spacing: -1.2px;
+  background: linear-gradient(135deg, #fff 0%, #71717a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-bottom: 30px;
+  font-size: 48.2px;
+  font-weight: 700;
+  line-height: 51.36px;
+  display: inline-block;
+}
+
+.styles-module-scss-module__7lV2qa__testimonials p.styles-module-scss-module__7lV2qa__desc {
+  color: rgba(161, 161, 170, .8);
+  max-width: 550px;
+  margin-bottom: 100px;
+  font-size: 17.9px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.styles-module-scss-module__7lV2qa__testimonials p.styles-module-scss-module__7lV2qa__desc span {
+  color: #e4e4e7;
+}
+
+.styles-module-scss-module__7lV2qa__testimonials .styles-module-scss-module__7lV2qa__repeatSection {
+  max-width: 1350px;
+}
+
+.styles-module-scss-module__7lV2qa__testimonials .styles-module-scss-module__7lV2qa__repeatSection .styles-module-scss-module__7lV2qa__repeatItem {
+  background: #0f0f0f;
+  border-radius: 4px;
+  max-width: 310px;
+  padding: 24px;
+  position: relative;
+  box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 0 1px rgba(244, 244, 245, .1), 0 0 #fff;
+}
+
+.styles-module-scss-module__7lV2qa__testimonials .styles-module-scss-module__7lV2qa__repeatSection .styles-module-scss-module__7lV2qa__repeatItem:before {
+  content: "";
+  border-radius: inherit;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+  background: linear-gradient(#8db842, #3f521d);
+  padding: 1px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-mask-image: linear-gradient(#fff 0, #fff 0), linear-gradient(#fff 0, #fff 0);
+  -webkit-mask-position: 0 0, 0 0;
+  -webkit-mask-size: auto, auto;
+  -webkit-mask-repeat: repeat, repeat;
+  -webkit-mask-clip: content-box, border-box;
+  -webkit-mask-origin: content-box, border-box;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  -webkit-mask-source-type: auto, auto;
+  mask-mode: match-source, match-source;
+}
+
+.styles-module-scss-module__7lV2qa__testimonials .styles-module-scss-module__7lV2qa__repeatSection .styles-module-scss-module__7lV2qa__repeatItem .styles-module-scss-module__7lV2qa__profile {
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  display: flex;
+}
+
+.styles-module-scss-module__7lV2qa__testimonials .styles-module-scss-module__7lV2qa__repeatSection .styles-module-scss-module__7lV2qa__repeatItem .styles-module-scss-module__7lV2qa__profile img {
+  border-radius: 100%;
+  width: 48px;
+  height: 48px;
+}
+
+.styles-module-scss-module__7lV2qa__testimonials .styles-module-scss-module__7lV2qa__repeatSection .styles-module-scss-module__7lV2qa__repeatItem .styles-module-scss-module__7lV2qa__profile div strong {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  display: block;
+}
+
+.styles-module-scss-module__7lV2qa__testimonials .styles-module-scss-module__7lV2qa__repeatSection .styles-module-scss-module__7lV2qa__repeatItem .styles-module-scss-module__7lV2qa__profile div span {
+  color: rgba(255, 255, 255, .6);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.styles-module-scss-module__7lV2qa__testimonials .styles-module-scss-module__7lV2qa__repeatSection .styles-module-scss-module__7lV2qa__repeatItem .styles-module-scss-module__7lV2qa__testimonialText {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+/*# sourceMappingURL=1ab64_app_components_LandingPage_Testimonials_styles_module_scss_module_css_e59ae46c._.single.css.map*/

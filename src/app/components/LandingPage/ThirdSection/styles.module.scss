@@ -1,0 +1,34 @@
+.thirdSection {
+    margin-bottom: 136px;
+
+    .pageCenter {
+        max-width: 1400px;
+    }
+
+    h2 {
+        display: inline-block;
+        background: linear-gradient(135deg, #FFF 0%, #71717A 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 48.2px;
+        font-weight: 700;
+        line-height: 51.36px;
+        letter-spacing: -1.2px;
+        margin-bottom: 30px;
+    }
+
+
+    .repeatSection {
+        max-width: 1350px;
+        width: 100%;
+
+        .repeatItem {
+            border: 1px solid #a1aebf;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 16px;
+            max-width: 200px;
+        }
+    }
+}

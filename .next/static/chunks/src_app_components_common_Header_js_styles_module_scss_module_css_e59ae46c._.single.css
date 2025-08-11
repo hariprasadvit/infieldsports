@@ -1,0 +1,49 @@
+/* [project]/src/app/components/common/Header.js/styles.module.scss.module.css [app-client] (css) */
+.styles-module-scss-module__qN0kLG__header {
+  z-index: 1000;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  transition: all .3s;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.styles-module-scss-module__qN0kLG__header .styles-module-scss-module__qN0kLG__pageCenter {
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0;
+  transition: padding .3s;
+  display: flex;
+}
+
+.styles-module-scss-module__qN0kLG__header nav ul {
+  align-items: center;
+  gap: 60px;
+  display: flex;
+}
+
+.styles-module-scss-module__qN0kLG__header nav ul li a {
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.styles-module-scss-module__qN0kLG__header nav ul li a:hover, .styles-module-scss-module__qN0kLG__header nav ul li a.styles-module-scss-module__qN0kLG__active {
+  text-decoration: underline;
+}
+
+.styles-module-scss-module__qN0kLG__scrolled {
+  background: #000;
+  border-bottom: 1px solid rgba(204, 204, 204, .24);
+}
+
+.styles-module-scss-module__qN0kLG__scrolled .styles-module-scss-module__qN0kLG__pageCenter {
+  padding: 10px 0;
+}
+
+/*# sourceMappingURL=src_app_components_common_Header_js_styles_module_scss_module_css_e59ae46c._.single.css.map*/

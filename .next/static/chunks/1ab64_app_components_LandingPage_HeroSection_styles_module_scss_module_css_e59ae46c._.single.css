@@ -1,0 +1,36 @@
+/* [project]/src/app/components/LandingPage/HeroSection/styles.module.scss.module.css [app-client] (css) */
+.styles-module-scss-module__-ZZzVW__heroSection {
+  background: radial-gradient(38.55% 40.34% at 51% 0, #93be47 12%, rgba(0, 0, 0, 0) 73%);
+  padding-top: 200px;
+  padding-bottom: 75px;
+}
+
+.styles-module-scss-module__-ZZzVW__heroSection h1 {
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  letter-spacing: -1.8px;
+  text-align: center;
+  background: radial-gradient(50% 70.71%, #ffce1d 0%, #8dc231 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  max-width: 950px;
+  margin: 0 auto 26px;
+  font-size: 71.9px;
+  font-weight: 700;
+  line-height: 77.04px;
+}
+
+.styles-module-scss-module__-ZZzVW__heroSection p {
+  color: #a1a1aa;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 18px;
+  font-size: 19.8px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+.styles-module-scss-module__-ZZzVW__heroSection .styles-module-scss-module__-ZZzVW__spline {
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=1ab64_app_components_LandingPage_HeroSection_styles_module_scss_module_css_e59ae46c._.single.css.map*/

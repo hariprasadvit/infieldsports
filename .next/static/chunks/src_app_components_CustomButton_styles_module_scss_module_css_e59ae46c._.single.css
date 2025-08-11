@@ -1,0 +1,64 @@
+/* [project]/src/app/components/CustomButton/styles.module.scss.module.css [app-client] (css) */
+.styles-module-scss-module__gPWrOG__customButton a, .styles-module-scss-module__gPWrOG__customButton button {
+  color: #000;
+  border-radius: 55px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.styles-module-scss-module__gPWrOG__customButton.styles-module-scss-module__gPWrOG__whiteBtn a, .styles-module-scss-module__gPWrOG__customButton.styles-module-scss-module__gPWrOG__whiteBtn button {
+  color: #000;
+  background: #fff;
+  border: 1px solid #fff;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.styles-module-scss-module__gPWrOG__customButton.styles-module-scss-module__gPWrOG__whiteBtn a:hover, .styles-module-scss-module__gPWrOG__customButton.styles-module-scss-module__gPWrOG__whiteBtn button:hover {
+  color: #fff;
+  background: #000;
+}
+
+.styles-module-scss-module__gPWrOG__customButton.styles-module-scss-module__gPWrOG__primary a, .styles-module-scss-module__gPWrOG__customButton.styles-module-scss-module__gPWrOG__primary button {
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  text-transform: uppercase;
+  background: linear-gradient(#38510d 0%, #8db842 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.styles-module-scss-module__gPWrOG__customButton.styles-module-scss-module__gPWrOG__primary a:before, .styles-module-scss-module__gPWrOG__customButton.styles-module-scss-module__gPWrOG__primary button:before {
+  content: "";
+  border-radius: inherit;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+  background: linear-gradient(360deg, #8dc231, #000);
+  padding: 2px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-mask-image: linear-gradient(#fff 0, #fff 0), linear-gradient(#fff 0, #fff 0);
+  -webkit-mask-position: 0 0, 0 0;
+  -webkit-mask-size: auto, auto;
+  -webkit-mask-repeat: repeat, repeat;
+  -webkit-mask-clip: content-box, border-box;
+  -webkit-mask-origin: content-box, border-box;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  -webkit-mask-source-type: auto, auto;
+  mask-mode: match-source, match-source;
+}
+
+.styles-module-scss-module__gPWrOG__customButton.styles-module-scss-module__gPWrOG__primary a:hover:before, .styles-module-scss-module__gPWrOG__customButton.styles-module-scss-module__gPWrOG__primary button:hover:before {
+  background: linear-gradient(#8dc231, #000);
+}
+
+/*# sourceMappingURL=src_app_components_CustomButton_styles_module_scss_module_css_e59ae46c._.single.css.map*/

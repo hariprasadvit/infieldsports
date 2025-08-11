@@ -1,0 +1,72 @@
+.footerForm {
+
+    .formWrap {
+        position: relative;
+        margin-bottom: 136px;
+        border-radius: 50px;
+        border: 1px solid #000;
+        // background: rgba(55, 55, 55, 0.20);
+        background: transparent;
+        background-blend-mode: overlay;
+        padding: 100px 16px;
+
+        // Glow border
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px; // border thickness
+            background: linear-gradient(360deg, #8DC231, #000000); // glow colors
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        h2 {
+            color: #FFF;
+            text-align: center;
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 56px;
+            margin-bottom: 10px;
+        }
+
+        p.desc {
+            color: rgba(255, 255, 255, 0.60);
+            text-align: center;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: 0.32px;
+            margin: 0 auto 50px;
+            max-width: 500px;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+
+            input.emailInput {
+                border-radius: 30px;
+                border: 2px solid #A1AEBF;
+                padding: 16px;
+                color: #0D0E14;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 20px;
+                letter-spacing: 0.32px;
+                background: #fff;
+                width: 320px;
+                height: 52px;
+            }
+
+            button.submitButton {}
+        }
+    }
+}

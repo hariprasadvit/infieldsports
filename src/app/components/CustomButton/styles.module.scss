@@ -1,0 +1,62 @@
+.customButton {
+
+    a,
+    button {
+        border-radius: 55px;
+        color: #000;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    &.whiteBtn a,
+    &.whiteBtn button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        color: #000;
+        border: 1px solid #fff;
+
+        &:hover {
+            background: #000;
+            color: #fff;
+        }
+    }
+
+    &.primary a,
+    &.primary button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background: none;
+        border: none;
+        background: linear-gradient(180deg, #38510D 0%, #8DB842 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+
+        // Glow border
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 2px; // border thickness
+            background: linear-gradient(360deg, #8DC231, #000000); // glow colors
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        &:hover {
+            &::before {
+                background: linear-gradient(180deg, #8DC231, #000000); // glow colors
+            }
+        }
+    }
+}
