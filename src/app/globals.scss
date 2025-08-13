@@ -404,6 +404,31 @@ body::before {
   }
 }
 
+@keyframes animateGradient {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.animate-gradient-text {
+  background: linear-gradient(to right,
+    #32cd32,
+    #98fb98,
+    #87ceeb,
+    #ffff00,
+    #87ceeb,
+    #98fb98,
+    #32cd32);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animateGradient 4s ease-in-out infinite;
+}
+
 // Floating animation for sections
 .floating-section {
   animation: gradientFloat 6s ease-in-out infinite;
