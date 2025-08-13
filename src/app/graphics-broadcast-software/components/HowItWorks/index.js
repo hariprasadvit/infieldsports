@@ -71,11 +71,31 @@ export default function HowItWorks() {
           <div className={styles.workflowSteps}>
             {workflowSteps.map((step, index) => (
               <div key={step.id} className={styles.workflowStep}>
-                <div className={styles.stepNumber}>
-                  <span>{step.id}</span>
-                </div>
-                <div className={styles.stepIcon}>
-                  <span>{step.icon}</span>
+                <div className={`${styles.geometricShape} ${styles[step.geometric]}`}>
+                  {step.geometric === 'diamond' && (
+                    <div className={styles.diamondInner}>
+                      <div className={styles.diamondCore}></div>
+                    </div>
+                  )}
+                  {step.geometric === 'circles' && (
+                    <div className={styles.circlesContainer}>
+                      <div className={styles.circle}></div>
+                      <div className={styles.circle}></div>
+                      <div className={styles.circle}></div>
+                    </div>
+                  )}
+                  {step.geometric === 'grid' && (
+                    <div className={styles.gridContainer}>
+                      {Array.from({ length: 16 }).map((_, i) => (
+                        <div key={i} className={styles.gridCell}></div>
+                      ))}
+                    </div>
+                  )}
+                  {step.geometric === 'hexagon' && (
+                    <div className={styles.hexagonContainer}>
+                      <div className={styles.hexagon}></div>
+                    </div>
+                  )}
                 </div>
                 <div className={styles.stepContent}>
                   <h4>{step.title}</h4>
