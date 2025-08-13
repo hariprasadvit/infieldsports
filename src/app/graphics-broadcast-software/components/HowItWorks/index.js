@@ -14,7 +14,7 @@ const workflowSteps = [
       "Initialize replay capture system",
       "Set up display configurations"
     ],
-    icon: "⚙️"
+    geometric: "diamond"
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const workflowSteps = [
       "Live replay trigger and control",
       "Multi-operator coordination dashboard"
     ],
-    icon: "🎮"
+    geometric: "circles"
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ const workflowSteps = [
       "Player bench and tunnel screens",
       "Broadcast graphics overlay"
     ],
-    icon: "📺"
+    geometric: "grid"
   },
   {
     id: 4,
@@ -50,7 +50,7 @@ const workflowSteps = [
       "Automated highlight reel generation",
       "Performance optimization insights"
     ],
-    icon: "📊"
+    geometric: "hexagon"
   }
 ];
 
