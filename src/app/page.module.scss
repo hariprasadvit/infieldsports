@@ -1,1 +1,10 @@
-.landing {}
+.landing {
+  section {
+    margin-bottom: 0;
+  }
+
+  // Reduce overall spacing between sections
+  > * + * {
+    margin-top: -20px;
+  }
+}
