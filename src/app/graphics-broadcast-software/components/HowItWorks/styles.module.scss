@@ -1,0 +1,255 @@
+.howItWorks {
+    padding: 80px 0;
+    margin-bottom: 80px;
+
+    .sectionHeader {
+        text-align: center;
+        margin-bottom: var(--space-3xl);
+
+        h2 {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFF 0%, #71717A 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: var(--heading-2);
+            font-weight: 700;
+            line-height: var(--heading-2-line);
+            letter-spacing: -0.025em;
+            margin-bottom: var(--space-xs);
+        }
+
+        h3 {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: var(--heading-3);
+            font-weight: 600;
+            line-height: var(--heading-3-line);
+            margin-bottom: var(--space-lg);
+        }
+
+        p.desc {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: var(--body-medium);
+            font-weight: 400;
+            line-height: var(--body-medium-line);
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            margin-bottom: var(--space-2xl);
+        }
+    }
+
+    .workflowContainer {
+        margin-bottom: 60px;
+
+        .workflowSteps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+
+            @media (max-width: 1024px) {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
+            }
+
+            @media (max-width: 768px) {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 0 24px;
+            }
+
+            .workflowStep {
+                position: relative;
+                background: rgba(15, 15, 15, 0.6);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 20px;
+                padding: 32px 24px;
+                text-align: center;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                backdrop-filter: blur(10px);
+
+                &:hover {
+                    transform: translateY(-8px);
+                    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+                    border-color: rgba(144, 238, 144, 0.3);
+                }
+
+                .stepNumber {
+                    position: absolute;
+                    top: -16px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 32px;
+                    height: 32px;
+                    background: linear-gradient(135deg, #32cd32 0%, #228b22 100%);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: 0 4px 12px rgba(50, 205, 50, 0.3);
+
+                    span {
+                        color: white;
+                        font-size: 14px;
+                        font-weight: 700;
+                    }
+                }
+
+                .stepIcon {
+                    margin-bottom: 20px;
+
+                    span {
+                        font-size: 48px;
+                        display: block;
+                        
+                        @media (max-width: 768px) {
+                            font-size: 40px;
+                        }
+                    }
+                }
+
+                .stepContent {
+                    h4 {
+                        color: rgba(255, 255, 255, 0.95);
+                        font-size: 24px;
+                        font-weight: 700;
+                        line-height: 30px;
+                        margin-bottom: 12px;
+                        
+                        @media (max-width: 768px) {
+                            font-size: 22px;
+                            line-height: 28px;
+                        }
+                    }
+
+                    .stepDescription {
+                        color: rgba(255, 255, 255, 0.8);
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 24px;
+                        margin-bottom: 20px;
+                        
+                        @media (max-width: 768px) {
+                            font-size: 15px;
+                            line-height: 22px;
+                        }
+                    }
+
+                    .stepDetails {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        text-align: left;
+
+                        li {
+                            color: rgba(255, 255, 255, 0.7);
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 20px;
+                            margin-bottom: 8px;
+                            padding-left: 16px;
+                            position: relative;
+
+                            &::before {
+                                content: '•';
+                                position: absolute;
+                                left: 0;
+                                color: rgba(144, 238, 144, 0.8);
+                                font-weight: 600;
+                            }
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+
+                .stepConnector {
+                    position: absolute;
+                    top: 50%;
+                    right: -20px;
+                    width: 40px;
+                    height: 2px;
+                    background: linear-gradient(90deg, rgba(144, 238, 144, 0.6) 0%, transparent 100%);
+                    transform: translateY(-50%);
+                    z-index: -1;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        right: -6px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 0;
+                        height: 0;
+                        border-left: 6px solid rgba(144, 238, 144, 0.6);
+                        border-top: 4px solid transparent;
+                        border-bottom: 4px solid transparent;
+                    }
+
+                    @media (max-width: 1024px) {
+                        display: none;
+                    }
+                }
+
+                @media (max-width: 1024px) {
+                    &:nth-child(2n) .stepConnector {
+                        display: none;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .stepConnector {
+                        display: none !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .integrationHighlight {
+        background: rgba(144, 238, 144, 0.05);
+        border: 1px solid rgba(144, 238, 144, 0.2);
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        backdrop-filter: blur(10px);
+
+        h4 {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 36px;
+            margin-bottom: 16px;
+            
+            @media (max-width: 768px) {
+                font-size: 24px;
+                line-height: 32px;
+            }
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28px;
+            
+            @media (max-width: 768px) {
+                font-size: 16px;
+                line-height: 26px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            padding: 32px 24px;
+        }
+    }
+}
