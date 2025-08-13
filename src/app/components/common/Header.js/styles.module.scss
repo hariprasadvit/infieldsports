@@ -23,16 +23,94 @@
         gap: 60px;
         align-items: center;
 
-        li a {
+        li {
+            position: relative;
+
+            a {
+                color: #fff;
+                text-align: center;
+                font-size: 14px;
+                font-weight: 400;
+
+                &:hover,
+                &.active {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .productsDropdown {
+        position: relative;
+        cursor: pointer;
+
+        .productsToggle {
             color: #fff;
-            text-align: center;
             font-size: 14px;
             font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
 
-            &:hover,
-            &.active {
+            &:hover {
                 text-decoration: underline;
             }
+
+            svg {
+                transition: transform 0.2s ease;
+            }
+        }
+
+        &:hover .productsToggle svg {
+            transform: rotate(180deg);
+        }
+
+        .dropdownMenu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.95);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 12px 0;
+            min-width: 280px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            margin-top: 8px;
+            animation: fadeInDown 0.2s ease;
+
+            .dropdownItem {
+                display: block;
+                width: 100%;
+                padding: 12px 20px;
+                color: #fff;
+                font-size: 14px;
+                font-weight: 400;
+                text-align: left;
+                border: none;
+                background: none;
+                cursor: pointer;
+                transition: all 0.2s ease;
+
+                &:hover {
+                    background: rgba(89, 184, 22, 0.1);
+                    color: #59B816;
+                }
+            }
+        }
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateX(-50%) translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
         }
     }
 }
