@@ -58,24 +58,35 @@ export default function Testimonials() {
       setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
     };
 
-    // Auto-scroll functionality
-    let autoScrollInterval;
-    if (!isHovering) {
-      autoScrollInterval = setInterval(() => {
-        if (container && canScrollRight) {
-          container.scrollBy({ left: 1, behavior: 'smooth' });
-        } else if (container) {
-          container.scrollTo({ left: 0, behavior: 'smooth' });
-        }
-      }, 50);
-    }
+    // Improved auto-scroll with requestAnimationFrame for better performance
+    let animationId;
+    let lastTime = 0;
+    const scrollSpeed = 30; // pixels per second
 
-    container.addEventListener('scroll', handleScroll);
+    const animate = (currentTime) => {
+      if (!isHovering && container) {
+        if (currentTime - lastTime >= 16) { // ~60fps
+          const scrollAmount = scrollSpeed / 60; // smooth scroll
+
+          if (canScrollRight) {
+            container.scrollLeft += scrollAmount;
+          } else {
+            // Reset to beginning with smooth transition
+            container.scrollTo({ left: 0, behavior: 'smooth' });
+          }
+          lastTime = currentTime;
+        }
+      }
+      animationId = requestAnimationFrame(animate);
+    };
+
+    container.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Initial check
+    animationId = requestAnimationFrame(animate);
 
     return () => {
       container.removeEventListener('scroll', handleScroll);
-      clearInterval(autoScrollInterval);
+      cancelAnimationFrame(animationId);
     };
   }, [isHovering, canScrollRight]);
 
