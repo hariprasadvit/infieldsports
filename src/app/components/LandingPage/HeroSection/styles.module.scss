@@ -2,6 +2,24 @@
     background: radial-gradient(38.55% 40.34% at 51% 0, #93be47 12%, rgba(0, -11, 0, 0) 73%);
     padding: 120px 0 80px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg,
+            rgba(127, 255, 0, 0.1) 0%,
+            rgba(0, 0, 0, 0.3) 50%,
+            rgba(50, 205, 50, 0.1) 100%);
+        background-size: 400% 400%;
+        animation: gradientShift 12s ease infinite;
+        z-index: -1;
+    }
 
     @media (max-width: 768px) {
         padding: 80px 0 60px;
