@@ -32,6 +32,14 @@ const businessVerticals = [
 ];
 
 export default function SecondSection() {
+  const router = useRouter();
+
+  const handleCardClick = (vertical) => {
+    if (vertical.id === 1) { // Graphics & Broadcast Software
+      router.push('/graphics-broadcast-software');
+    }
+  };
+
   return (
     <section className={styles.secondSection}>
       <div className="pageCenter">
@@ -46,11 +54,12 @@ export default function SecondSection() {
         <div className={styles.repeatSection}>
           {businessVerticals.map((vertical) => (
             <div
-              className={styles.repeatItem}
+              className={`${styles.repeatItem} ${vertical.id === 1 ? styles.clickable : ''}`}
               key={vertical.id}
               style={{
                 background: vertical.gradient,
               }}
+              onClick={() => handleCardClick(vertical)}
             >
               <div className={styles.cardOverlay}></div>
               <div className={styles.cardContent}>
@@ -62,7 +71,7 @@ export default function SecondSection() {
                 <h5>{vertical.title}</h5>
                 <p>{vertical.description}</p>
                 <button className={styles.ctaButton}>
-                  Know More
+                  {vertical.id === 1 ? 'Explore Solutions' : 'Know More'}
                 </button>
               </div>
             </div>
