@@ -37,6 +37,8 @@ export default function SecondSection() {
   const handleCardClick = (vertical) => {
     if (vertical.id === 1) { // Graphics & Broadcast Software
       router.push('/graphics-broadcast-software');
+    } else if (vertical.id === 2) { // AI & Analytics Platform
+      router.push('/ai-analytics-platform');
     } else if (vertical.id === 3) { // LED & Infrastructure Solutions
       router.push('/led-infrastructure-solutions');
     }
