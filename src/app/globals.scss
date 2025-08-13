@@ -267,3 +267,145 @@ ul {
     color: rgba(255, 255, 255, 1) !important;
   }
 }
+
+// Gradient animations and utilities
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradientFloat {
+  0%, 100% {
+    transform: translateY(0px);
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px);
+    filter: hue-rotate(30deg);
+  }
+}
+
+@keyframes scrollGradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+// Gradient utility classes
+.gradient-animated {
+  background: linear-gradient(270deg,
+    var(--gradient-green-start),
+    var(--gradient-green-mid),
+    var(--gradient-black-start),
+    var(--gradient-green-end));
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+}
+
+.gradient-green-yellow {
+  background: linear-gradient(135deg,
+    var(--gradient-green-start) 0%,
+    var(--gradient-yellow-mid) 50%,
+    var(--gradient-green-end) 100%);
+  background-size: 200% 200%;
+}
+
+.gradient-green-black {
+  background: linear-gradient(135deg,
+    var(--gradient-green-start) 0%,
+    var(--gradient-black-mid) 50%,
+    var(--gradient-green-end) 100%);
+  background-size: 200% 200%;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg,
+    var(--gradient-green-start) 0%,
+    var(--gradient-yellow-mid) 50%,
+    var(--gradient-green-end) 100%);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s ease infinite;
+}
+
+.text-gradient-green-black {
+  background: linear-gradient(135deg,
+    var(--gradient-green-start) 0%,
+    var(--gradient-black-start) 25%,
+    var(--gradient-green-mid) 50%,
+    var(--gradient-black-mid) 75%,
+    var(--gradient-green-end) 100%);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 8s ease infinite;
+}
+
+// Scroll-triggered animations
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-gradient-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-gradient-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(127, 255, 0, 0.1) 50%,
+    transparent 100%);
+  transition: left 0.8s ease;
+  z-index: -1;
+}
+
+.scroll-gradient-bg.active::before {
+  left: 100%;
+}
+
+// Floating animation for sections
+.floating-section {
+  animation: gradientFloat 6s ease-in-out infinite;
+}
+
+// Performance optimizations
+@media (prefers-reduced-motion: reduce) {
+  .gradient-animated,
+  .text-gradient,
+  .text-gradient-green-black,
+  .floating-section {
+    animation: none !important;
+  }
+
+  .scroll-fade-in {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
