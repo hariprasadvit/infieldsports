@@ -75,7 +75,7 @@ export default function SecondSection() {
                 <h5>{vertical.title}</h5>
                 <p>{vertical.description}</p>
                 <button className={styles.ctaButton}>
-                  {vertical.id === 1 ? 'Explore Solutions' : vertical.id === 3 ? 'View Stadium Solutions' : 'Know More'}
+                  {vertical.id === 1 ? 'Explore Solutions' : vertical.id === 2 ? 'Explore AI Platform' : vertical.id === 3 ? 'View Stadium Solutions' : 'Know More'}
                 </button>
               </div>
             </div>
