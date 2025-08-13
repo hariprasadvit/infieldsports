@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.scss";
-import Header from "./components/common/Header.js";
+import Header from "./components/common/Header.js/index.js";
 import Footer from "./components/common/Footer";
 
 const inter = Inter({
