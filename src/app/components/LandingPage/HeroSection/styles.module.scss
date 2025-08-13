@@ -40,16 +40,16 @@
 
         &.text-gradient-green-black {
             background: linear-gradient(135deg,
-                #7fff00 0%,
-                #1a1a1a 25%,
-                #32cd32 50%,
-                #000000 75%,
-                #228b22 100%);
-            background-size: 300% 300%;
+                #ffffff 0%,
+                #e8f5e8 30%,
+                #d4f5d4 50%,
+                #c0f0c0 70%,
+                #b8f0b8 100%);
+            background-size: 200% 200%;
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: gradientShift 8s ease infinite;
+            animation: gradientShift 15s ease infinite;
         }
 
         @media (max-width: 768px) {
