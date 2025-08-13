@@ -6,7 +6,6 @@ import Testimonials from "./components/LandingPage/Testimonials";
 import ThirdSection from "./components/LandingPage/ThirdSection";
 import Gallery from "./components/LandingPage/Gallery";
 import ExpertCTA from "./components/LandingPage/ExpertCTA";
-import FooterForm from "./components/LandingPage/FooterForm";
 
 export default function Home() {
   return (
@@ -18,7 +17,6 @@ export default function Home() {
       <Gallery />
       <Testimonials />
       <ExpertCTA />
-      <FooterForm />
     </div>
   );
 }
