@@ -47,10 +47,14 @@
 
     .repeatSection {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 40px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
         max-width: 1200px;
         margin: 0 auto;
+
+        @media (max-width: 1024px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
 
         .repeatItem {
             position: relative;
