@@ -35,7 +35,6 @@ export default function SecondSection() {
   const router = useRouter();
 
   const handleCardClick = (vertical) => {
-    console.log('Card clicked:', vertical.id, vertical.title);
     if (vertical.id === 1) { // Graphics & Broadcast Software
       router.push('/graphics-broadcast-software');
     } else if (vertical.id === 2) { // AI & Analytics Platform
