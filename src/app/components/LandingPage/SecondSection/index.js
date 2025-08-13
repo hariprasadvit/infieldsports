@@ -1,75 +1,91 @@
+"use client";
+
 import React from "react";
 import styles from "./styles.module.scss";
-import imgOne from "../../../../../public/landing/imgOne.svg";
-import imgTwo from "../../../../../public/landing/imgTwo.svg";
-import imgThree from "../../../../../public/landing/imgThree.svg";
 import Image from "next/image";
+import CustomButton from "../../CustomButton";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-const repeatSectionItems = [
+const businessVerticals = [
   {
     id: 1,
-    title: "LED Display",
+    title: "Graphics & Broadcast Software",
     description:
-      "All your data and finances in one place to provide quick answers and make decisions",
-    imageUrl: imgOne,
+      "Advanced graphics solutions and broadcast software for live sports events. Our cutting-edge technology delivers real-time graphics, scoring systems, and broadcast-ready content that enhances viewer experience and engagement.",
+    background: "rgba(15, 15, 15, 0.8)",
   },
   {
     id: 2,
-    title: "League Operation",
+    title: "AI & Analytics Platform",
     description:
-      "All your data and finances in one place to provide quick answers and make decisions",
-    imageUrl: imgTwo,
+      "Intelligent analytics and AI-powered solutions for sports performance optimization. We provide comprehensive data analysis, player tracking, and predictive insights that transform how teams and leagues understand their game.",
+    background: "rgba(15, 15, 15, 0.8)",
   },
   {
     id: 3,
-    title: "Pyrotechnics",
+    title: "LED & Infrastructure Solutions",
     description:
-      "All your data and finances in one place to provide quick answers and make decisions",
-    imageUrl: imgOne,
-  },
-  {
-    id: 4,
-    title: "League Operation",
-    description:
-      "All your data and finances in one place to provide quick answers and make decisions",
-    imageUrl: imgThree,
-  },
-  {
-    id: 5,
-    title: "League Operation",
-    description:
-      "All your data and finances in one place to provide quick answers and make decisions",
-    imageUrl: imgThree,
-  },
-  {
-    id: 6,
-    title: "League Operation",
-    description:
-      "All your data and finances in one place to provide quick answers and make decisions",
-    imageUrl: imgThree,
+      "Complete LED display systems and stadium infrastructure solutions. From indoor/outdoor LED installations to seating arrangements and gallery setups, we create immersive sporting environments that captivate audiences.",
+    background: "rgba(15, 15, 15, 0.8)",
   },
 ];
 
 export default function SecondSection() {
+  const router = useRouter();
+
+  const handleCardClick = (vertical) => {
+    if (vertical.id === 1) { // Graphics & Broadcast Software
+      router.push('/graphics-broadcast-software');
+    } else if (vertical.id === 2) { // AI & Analytics Platform
+      router.push('/ai-analytics-platform');
+    } else if (vertical.id === 3) { // LED & Infrastructure Solutions
+      router.push('/led-infrastructure-solutions');
+    }
+  };
+
   return (
     <section className={styles.secondSection}>
       <div className="pageCenter">
-        <h2>
-          Everything you need. <br /> Nothing you don’t
-        </h2>
-        <p className={styles.desc}>
-          Financial management and visibility in one place. Experience{" "}
-          <span>flexible toolkit</span> that makes every task feel like a
-          breeze.
-        </p>
+        <div className={styles.sectionHeader}>
+          <h2>Our Business Verticals</h2>
+          <h3>Transforming Sports Technology</h3>
+          <p className={styles.desc}>
+            Comprehensive solutions across three core areas. Experience our{" "}
+            <span>integrated ecosystem</span> that powers the future of sports entertainment.
+          </p>
+        </div>
         <div className={styles.repeatSection}>
-          {repeatSectionItems.map((item) => (
-            <div className={styles.repeatItem} key={item.id}>
-              <div className={styles.imgWrap}>
-                <Image src={item.imageUrl} alt="" width={79} height={79} />
+          {businessVerticals.map((vertical) => (
+            <div
+              className={`${styles.repeatItem} ${(vertical.id === 1 || vertical.id === 2 || vertical.id === 3) ? styles.clickable : ''}`}
+              key={vertical.id}
+              style={{
+                background: vertical.background,
+              }}
+              onClick={() => handleCardClick(vertical)}
+            >
+              <div className={styles.cardOverlay}></div>
+              <div className={styles.cardContent}>
+                <div className={styles.imgWrap}>
+                  <div className={styles.imagePlaceholder}>
+                    <span>Image Placeholder</span>
+                  </div>
+                </div>
+                <h5>{vertical.title}</h5>
+                <p>{vertical.description}</p>
+                <button
+                  className={styles.ctaButton}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleCardClick(vertical);
+                  }}
+                >
+                  {vertical.id === 1 ? 'Explore Solutions' :
+                   vertical.id === 2 ? 'Explore AI Platform' :
+                   vertical.id === 3 ? 'View Stadium Solutions' : 'Know More'}
+                </button>
               </div>
-              <h5>{item.title}</h5>
-              <p>{item.description}</p>
             </div>
           ))}
         </div>

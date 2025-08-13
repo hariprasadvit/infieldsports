@@ -1,76 +1,140 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import styles from "./styles.module.scss";
-import Slider from "react-slick";
-import test1 from "../../../../../public/landing/test1.svg";
-import Image from "next/image";
 
 export default function Testimonials() {
+  const scrollRef = useRef(null);
+  const [isHovering, setIsHovering] = useState(false);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
   const testimonials = [
     {
-      img: test1,
-      name: "Brooklyn Simmons",
-      company: "manam",
-      text: "Sit ut diam bibendum dolor. Ullamcorper pharetra nibh eget vitae pulvinar. Placerat sapien, dolor, aenean vivamus in tincidunt et. Mauris dolor vestibulum et lacus a ante orci.",
+      name: "Sarah Johnson",
+      company: "Premier Sports League",
+      position: "Technology Director",
+      text: "Infield Sports transformed our entire stadium experience. Their LED solutions and broadcast software have elevated our game presentation to championship levels.",
     },
     {
-      img: test1,
-      name: "Esther Howard",
-      company: "Offmax",
-      text: "Vitae tellus bibendum nibh integer auctor pretium sed. Sollicitudin tristique euismod elit.",
+      name: "Michael Chen",
+      company: "Global Sports Network",
+      position: "Head of Operations",
+      text: "The AI analytics platform provided insights we never thought possible. Game-changing technology that's revolutionized how we understand sports performance.",
     },
     {
-      img: test1,
-      name: "Arlene McCoy",
-      company: "bloopixel",
-      text: "Eu eu eget lorem commodo sagittis enim in viverra. Urna egestas ipsum gravida tempor. Libero, consectetur urna in enim magnis. Est.",
+      name: "Emma Rodriguez",
+      company: "Olympic Committee",
+      position: "Innovation Lead",
+      text: "Outstanding partnership from concept to execution. Their graphics and broadcast solutions made our events truly spectacular for audiences worldwide.",
     },
     {
-      img: test1,
-      name: "Jane Cooper",
-      company: "unpexel",
-      text: "Amet aliquam, volutpat nisl, duis sed at. Vehicula proin consectetur risus dictumst nec amet consequat at tempus. Ornare dapibus nunc fames nibh morbi viverra eu sed mattis.",
+      name: "David Thompson",
+      company: "Professional Football League",
+      position: "Technical Manager",
+      text: "Reliability, innovation, and exceptional support. Infield Sports delivered beyond our expectations and continues to push the boundaries of sports technology.",
+    },
+    {
+      name: "Lisa Wang",
+      company: "International Tennis Federation",
+      position: "Digital Innovation Lead",
+      text: "The seamless integration of their analytics platform during our tournaments provided unprecedented insights that enhanced both player performance and fan engagement.",
+    },
+    {
+      name: "Robert Martinez",
+      company: "Major League Soccer",
+      position: "Broadcast Director",
+      text: "Their real-time graphics and broadcast solutions have set a new standard in sports presentation. The quality and reliability are simply outstanding.",
     },
   ];
-  const settings = {
-    dots: true,
-    arrows: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const { scrollLeft, scrollWidth, clientWidth } = container;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
+    };
+
+    // Improved auto-scroll with requestAnimationFrame for better performance
+    let animationId;
+    let lastTime = 0;
+    const scrollSpeed = 30; // pixels per second
+
+    const animate = (currentTime) => {
+      if (!isHovering && container) {
+        if (currentTime - lastTime >= 16) { // ~60fps
+          const scrollAmount = scrollSpeed / 60; // smooth scroll
+
+          if (canScrollRight) {
+            container.scrollLeft += scrollAmount;
+          } else {
+            // Reset to beginning with smooth transition
+            container.scrollTo({ left: 0, behavior: 'smooth' });
+          }
+          lastTime = currentTime;
+        }
+      }
+      animationId = requestAnimationFrame(animate);
+    };
+
+    container.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial check
+    animationId = requestAnimationFrame(animate);
+
+    return () => {
+      container.removeEventListener('scroll', handleScroll);
+      cancelAnimationFrame(animationId);
+    };
+  }, [isHovering, canScrollRight]);
+
+  const handleMouseEnter = () => {
+    setIsHovering(true);
   };
+
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+  };
+
   return (
     <section className={styles.testimonials}>
-      <div className={`pageCenter ${styles.pageCenter}`}>
-        <h2>What our Clients say</h2>
-        <p className={styles.desc}>
-          Our AI-driven assistant is designed to decode complex financial
-          figures and <span>illuminate key trends</span> in your business.
-        </p>
-        <div className={styles.repeatSection}>
-          <Slider {...settings}>
+      <div className="pageCenter">
+        <div className={styles.sectionHeader}>
+          <h2>What Our Clients Say</h2>
+          <p className={styles.desc}>
+            Hear from industry leaders who trust our solutions to <span>power their success</span>
+            and deliver exceptional sports experiences to millions of fans worldwide.
+          </p>
+        </div>
+        <div className={styles.carouselContainer}>
+          <div className={styles.gradientFade}></div>
+          <div
+            className={styles.scrollContainer}
+            ref={scrollRef}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
             {testimonials.map((testimonial, index) => (
-              <div className={styles.repeatItem} key={index}>
+              <div className={styles.testimonialCard} key={index}>
+                <div className={styles.testimonialText}>
+                  "{testimonial.text}"
+                </div>
                 <div className={styles.profile}>
-                  <Image
-                    src={testimonial.img}
-                    alt="Client 1"
-                    width={48}
-                    height={48}
-                  />
-                  <div>
+                  <div className={styles.avatarPlaceholder}>
+                    <span>{testimonial.name.charAt(0)}</span>
+                  </div>
+                  <div className={styles.clientInfo}>
                     <strong>{testimonial.name}</strong>
-                    <span>{testimonial.company}</span>
+                    <span className={styles.position}>{testimonial.position}</span>
+                    <span className={styles.company}>{testimonial.company}</span>
                   </div>
                 </div>
-                <div className={styles.testimonialText}>{testimonial.text}</div>
               </div>
             ))}
-          </Slider>
+          </div>
+          <div className={styles.gradientFadeRight}></div>
         </div>
       </div>
     </section>

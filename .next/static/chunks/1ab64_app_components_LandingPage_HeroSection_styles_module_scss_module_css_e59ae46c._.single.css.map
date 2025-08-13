@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///turbopack:///[project]/src/app/components/LandingPage/HeroSection/Volumes/Batman/Projects/InFiledSportsBB/infield-sports-fe/src/app/components/LandingPage/HeroSection/styles.module.scss"],"sourcesContent":[".heroSection {\n    background: radial-gradient(38.55% 40.34% at 51% 0, #93be47 12%, rgba(0, -11, 0, 0) 73%);\n    // background: radial-gradient(49.55% 45.34% at 50% 0%, #93BE47 8%, rgba(0, 0, 0, 0.00) 100%);\n    padding-top: 200px;\n    padding-bottom: 75px;\n\n    h1 {\n        background: radial-gradient(50% 70.71% at 50% 50%, #FFCE1D 0%, #8DC231 100%);\n        background-clip: text;\n        -webkit-background-clip: text;\n        -webkit-text-fill-color: transparent;\n        font-size: 71.9px;\n        font-weight: 700;\n        line-height: 77.04px;\n        letter-spacing: -1.8px;\n        text-align: center;\n        max-width: 950px;\n        margin: 0 auto 26px;\n    }\n\n    p {\n        color: #A1A1AA;\n        text-align: center;\n        font-size: 19.8px;\n        font-weight: 500;\n        line-height: 32px;\n        max-width: 720px;\n        margin: 0 auto 18px;\n    }\n\n    .spline {\n        margin: 0 auto;\n    }\n}"],"names":[],"mappings":"AAAA;;;;;;AAMI;;;;;;;;;;;;;;AAcA;;;;;;;;;;AAUA"}}]
-}

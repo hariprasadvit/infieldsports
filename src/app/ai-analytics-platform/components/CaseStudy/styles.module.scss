@@ -1,0 +1,260 @@
+.caseStudy {
+    padding: 80px 0;
+    margin-bottom: 80px;
+
+    .sectionHeader {
+        text-align: center;
+        margin-bottom: var(--space-3xl);
+
+        h2 {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFF 0%, #71717A 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: var(--heading-2);
+            font-weight: 700;
+            line-height: var(--heading-2-line);
+            letter-spacing: -0.025em;
+            margin-bottom: var(--space-lg);
+        }
+
+        p.desc {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: var(--body-medium);
+            font-weight: 400;
+            line-height: var(--body-medium-line);
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            margin-bottom: var(--space-2xl);
+        }
+    }
+
+    .dashboardContainer {
+        max-width: 1200px;
+        margin: 0 auto;
+
+        .dashboardDemo {
+            background: rgba(15, 15, 15, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+
+            .dashboardHeader {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 24px 32px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                background: rgba(89, 184, 22, 0.05);
+
+                h3 {
+                    color: rgba(255, 255, 255, 0.95);
+                    font-size: 20px;
+                    font-weight: 600;
+                    margin: 0;
+                }
+
+                .statusIndicator {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+
+                    .liveStatus {
+                        color: rgba(89, 184, 22, 0.9);
+                        font-size: 14px;
+                        font-weight: 600;
+                    }
+
+                    .timestamp {
+                        color: rgba(255, 255, 255, 0.7);
+                        font-size: 14px;
+                        font-weight: 500;
+                        font-family: monospace;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    padding: 20px 24px;
+                    flex-direction: column;
+                    gap: 12px;
+                    text-align: center;
+                }
+            }
+
+            .dashboardContent {
+                padding: 32px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+
+                @media (max-width: 768px) {
+                    grid-template-columns: 1fr;
+                    padding: 24px;
+                    gap: 24px;
+                }
+
+                .heatmapSection {
+                    h4 {
+                        color: rgba(255, 255, 255, 0.9);
+                        font-size: 18px;
+                        font-weight: 600;
+                        margin-bottom: 20px;
+                    }
+
+                    .heatmapGrid {
+                        display: grid;
+                        grid-template-columns: repeat(5, 1fr);
+                        gap: 4px;
+                        margin-bottom: 16px;
+
+                        .heatmapCell {
+                            aspect-ratio: 1;
+                            border-radius: 4px;
+                            
+                            &.high {
+                                background: rgba(89, 184, 22, 0.8);
+                            }
+                            
+                            &.medium {
+                                background: rgba(89, 184, 22, 0.5);
+                            }
+                            
+                            &.low {
+                                background: rgba(89, 184, 22, 0.2);
+                            }
+                        }
+                    }
+
+                    .heatmapLegend {
+                        display: flex;
+                        gap: 16px;
+                        flex-wrap: wrap;
+
+                        .legendItem {
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                            font-size: 12px;
+                            color: rgba(255, 255, 255, 0.7);
+
+                            .colorBox {
+                                width: 12px;
+                                height: 12px;
+                                border-radius: 2px;
+                                
+                                &.high {
+                                    background: rgba(89, 184, 22, 0.8);
+                                }
+                                
+                                &.medium {
+                                    background: rgba(89, 184, 22, 0.5);
+                                }
+                                
+                                &.low {
+                                    background: rgba(89, 184, 22, 0.2);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .metricsSection {
+                    h4 {
+                        color: rgba(255, 255, 255, 0.9);
+                        font-size: 18px;
+                        font-weight: 600;
+                        margin-bottom: 20px;
+                    }
+
+                    .metricsGrid {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 16px;
+
+                        .metricCard {
+                            background: rgba(89, 184, 22, 0.1);
+                            border: 1px solid rgba(89, 184, 22, 0.2);
+                            border-radius: 12px;
+                            padding: 16px;
+                            text-align: center;
+
+                            .metricValue {
+                                display: block;
+                                color: rgba(89, 184, 22, 0.9);
+                                font-size: 24px;
+                                font-weight: 700;
+                                margin-bottom: 4px;
+
+                                @media (max-width: 768px) {
+                                    font-size: 20px;
+                                }
+                            }
+
+                            .metricLabel {
+                                color: rgba(255, 255, 255, 0.7);
+                                font-size: 12px;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .chartSection {
+                padding: 0 32px 32px;
+
+                h4 {
+                    color: rgba(255, 255, 255, 0.9);
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin-bottom: 20px;
+                }
+
+                .chartPlaceholder {
+                    background: rgba(255, 255, 255, 0.02);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    border-radius: 12px;
+                    padding: 24px;
+                    height: 200px;
+                    display: flex;
+                    flex-direction: column;
+
+                    .chartBars {
+                        flex: 1;
+                        display: flex;
+                        align-items: end;
+                        gap: 12px;
+                        margin-bottom: 12px;
+
+                        .chartBar {
+                            flex: 1;
+                            background: linear-gradient(to top, rgba(89, 184, 22, 0.8), rgba(178, 215, 83, 0.6));
+                            border-radius: 4px 4px 0 0;
+                            min-height: 20px;
+                        }
+                    }
+
+                    .chartLabels {
+                        display: flex;
+                        justify-content: space-between;
+                        
+                        span {
+                            color: rgba(255, 255, 255, 0.6);
+                            font-size: 12px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    padding: 0 24px 24px;
+                }
+            }
+        }
+    }
+}

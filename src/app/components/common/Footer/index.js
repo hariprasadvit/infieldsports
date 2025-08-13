@@ -9,64 +9,126 @@ import Link from "next/link";
 import Image from "next/image";
 export default function Footer() {
   return (
-    <div className={styles.footer}>
+    <footer className={styles.footer} role="contentinfo">
       <div className={`pageCenter ${styles.pageCenter}`}>
-        <div className={styles.left}>
-          <Image src={logo} alt="Logo" width={203} height={53} />
-          <p>Managed by Booleanbeyond.com</p>
-          <div className={styles.socialIcons}>
-            <div className={styles.iconWrap}>
-              <Image src={youtube} alt="YouTube" width={16} height={16} />
-            </div>
-            <div className={styles.iconWrap}>
-              <Image src={twitter} alt="Twitter" width={16} height={16} />
-            </div>
-            <div className={styles.iconWrap}>
-              <Image src={discord} alt="Discord" width={16} height={16} />
-            </div>
-            <div className={styles.iconWrap}>
-              <Image src={pinT} alt="pinterest" width={16} height={16} />
+        <div className={styles.footerContent}>
+          <div className={styles.brandSection}>
+            <Link href="/" className={styles.logoLink} aria-label="Infield Sports Home">
+              <Image src={logo} alt="Infield Sports Logo" width={203} height={53} />
+            </Link>
+            <p className={styles.tagline}>
+              Transforming sports experiences through cutting-edge technology and innovative solutions.
+            </p>
+            <div className={styles.socialIcons} role="list" aria-label="Social Media Links">
+              <Link
+                href="#"
+                className={styles.iconWrap}
+                aria-label="Follow us on YouTube"
+                role="listitem"
+              >
+                <Image src={youtube} alt="" width={20} height={20} />
+              </Link>
+              <Link
+                href="#"
+                className={styles.iconWrap}
+                aria-label="Follow us on Twitter"
+                role="listitem"
+              >
+                <Image src={twitter} alt="" width={20} height={20} />
+              </Link>
+              <Link
+                href="#"
+                className={styles.iconWrap}
+                aria-label="Join our Discord community"
+                role="listitem"
+              >
+                <Image src={discord} alt="" width={20} height={20} />
+              </Link>
+              <Link
+                href="#"
+                className={styles.iconWrap}
+                aria-label="Follow us on Pinterest"
+                role="listitem"
+              >
+                <Image src={pinT} alt="" width={20} height={20} />
+              </Link>
             </div>
           </div>
-          <div className={styles.copyright}>© 2025 Infield Sports LLP</div>
+
+          <div className={styles.linksSection}>
+            <div className={styles.footerLinks}>
+              <h6>Quick Links</h6>
+              <ul role="list">
+                <li>
+                  <Link href="/about">About Us</Link>
+                </li>
+                <li>
+                  <Link href="/solutions">Our Solutions</Link>
+                </li>
+                <li>
+                  <Link href="/case-studies">Case Studies</Link>
+                </li>
+                <li>
+                  <Link href="/news">News & Media</Link>
+                </li>
+                <li>
+                  <Link href="/careers">Careers</Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className={styles.footerLinks}>
+              <h6>Services</h6>
+              <ul role="list">
+                <li>
+                  <Link href="/services/graphics">Graphics & Broadcast</Link>
+                </li>
+                <li>
+                  <Link href="/services/ai-analytics">AI & Analytics</Link>
+                </li>
+                <li>
+                  <Link href="/services/led-infrastructure">LED Solutions</Link>
+                </li>
+                <li>
+                  <Link href="/support">Technical Support</Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className={styles.footerLinks}>
+              <h6>Connect</h6>
+              <ul role="list">
+                <li>
+                  <Link href="/contact">Contact Us</Link>
+                </li>
+                <li>
+                  <Link href="/partnerships">Partnerships</Link>
+                </li>
+                <li>
+                  <Link href="/blog">Blog</Link>
+                </li>
+                <li>
+                  <Link href="/newsletter">Newsletter</Link>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div className={styles.right}>
-          <div className={styles.footerLinks}>
-            <h6>Quick Links</h6>
-            <ul>
-              <li>
-                <Link href="/about">About Us</Link>
-              </li>
-              <li>
-                <Link href="#">Our Solutions</Link>
-              </li>
-              <li>
-                <Link href="#">News & Media</Link>
-              </li>
-              <li>
-                <Link href="#">Careers</Link>
-              </li>
-              <li>
-                <Link href="#">Disclaimer</Link>
-              </li>
-            </ul>
+
+        <div className={styles.footerBottom}>
+          <div className={styles.copyright}>
+            © 2025 Infield Sports LLP. All rights reserved.
           </div>
-          <div className={styles.footerLinks}>
-            <h6>Get Connected</h6>
-            <ul>
-              <li>
-                <Link href="#">Ecosystem</Link>
-              </li>
-              <li>
-                <Link href="#">Blog</Link>
-              </li>
-              <li>
-                <Link href="#">Newsletter</Link>
-              </li>
-            </ul>
+          <div className={styles.legalLinks}>
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms of Service</Link>
+            <Link href="/disclaimer">Disclaimer</Link>
+          </div>
+          <div className={styles.attribution}>
+            Managed by <Link href="https://booleanbeyond.com" target="_blank" rel="noopener noreferrer">Booleanbeyond.com</Link>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }

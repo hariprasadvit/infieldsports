@@ -1,98 +1,236 @@
 .secondSection {
-    margin-bottom: 136px;
+    margin-bottom: 80px;
+    padding: 60px 0;
 
-    h2 {
-        display: inline-block;
-        background: linear-gradient(135deg, #FFF 0%, #71717A 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 48.2px;
-        font-weight: 700;
-        line-height: 51.36px;
-        letter-spacing: -1.2px;
-        margin-bottom: 30px;
-    }
+    .sectionHeader {
+        text-align: center;
+        margin-bottom: var(--space-2xl);
 
-    p.desc {
-        color: rgba(161, 161, 170, 0.80);
-        font-size: 17.9px;
-        font-weight: 400;
-        line-height: 28px;
-        max-width: 550px;
-        margin-bottom: 100px;
-
-        span {
-            color: #E4E4E7;
+        h2 {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFF 0%, #71717A 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: var(--heading-2);
+            font-weight: 700;
+            line-height: var(--heading-2-line);
+            letter-spacing: -0.025em;
+            margin-bottom: var(--space-xs);
         }
 
+        h3 {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: var(--heading-3);
+            font-weight: 600;
+            line-height: var(--heading-3-line);
+            margin-bottom: var(--space-lg);
+        }
+
+        p.desc {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: var(--body-medium);
+            font-weight: 400;
+            line-height: var(--body-medium-line);
+            max-width: 640px;
+            margin: 0 auto;
+
+            span {
+                color: rgba(255, 255, 255, 0.95);
+            }
+        }
+
+        @media (max-width: 768px) {
+            margin-bottom: var(--space-xl);
+        }
     }
 
     .repeatSection {
-        display: flex;
-        align-items: center;
-        gap: 70px;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        @media (max-width: 1024px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
 
         .repeatItem {
             position: relative;
-            padding: 35px 55px;
-            color: white;
+            border-radius: 24px;
             overflow: hidden;
-            border-radius: 50px;
-            border: 1px solid #000;
-            background: rgba(55, 55, 55, 0.20);
-            background-blend-mode: overlay;
-            max-width: 365px;
-            width: 100%;
+            min-height: 400px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-            // Glow border
             &::before {
-                content: "";
+                content: '';
+                background: conic-gradient(
+                    #59B816 20deg,
+                    transparent 120deg
+                );
+                width: 150%;
+                height: 150%;
                 position: absolute;
-                inset: 0;
-                border-radius: inherit;
-                padding: 1px; // border thickness
-                background: linear-gradient(360deg, #8DC231, #000000); // glow colors
-                -webkit-mask:
-                    linear-gradient(#fff 0 0) content-box,
-                    linear-gradient(#fff 0 0);
-                -webkit-mask-composite: xor;
-                mask-composite: exclude;
-                pointer-events: none;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                transition: opacity 0.6s ease;
+                animation: rotate 4s linear infinite;
             }
 
-            .imgWrap {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background: url("../../../../../public/landing/secondSec.svg") no-repeat center center;
-                width: 79px;
-                height: 79px;
-                margin-bottom: 70px;
-                border-radius: 100%;
+            &::after {
+                content: '';
+                width: calc(100% - 4px);
+                height: calc(100% - 4px);
+                background: rgba(15, 15, 15, 0.95);
+                position: absolute;
+                top: 2px;
+                left: 2px;
+                border-radius: 22px;
+                z-index: 1;
+            }
 
-                img {
-                    width: 31px;
-                    height: 31px;
+            &.clickable {
+                cursor: pointer;
+            }
+
+            &:hover::before {
+                opacity: 1;
+            }
+
+            &:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+
+                .cardContent {
+                    .imgWrap {
+                        transform: scale(1.05);
+                    }
+
+                    .ctaButton {
+                        background: rgba(255, 255, 255, 1);
+                        color: rgba(0, 0, 0, 1);
+                    }
                 }
             }
 
-            h5 {
-                color: #E4E4E7;
-                font-size: 17.9px;
-                font-weight: 500;
-                line-height: 18px;
-                margin-bottom: 15px;
+            .cardOverlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.15);
+                z-index: 1;
             }
 
-            p {
-                color: rgba(161, 161, 170, 0.80);
-                font-size: 13.9px;
-                font-weight: 400;
-                line-height: 24px;
+            .cardContent {
+                position: relative;
+                z-index: 2;
+                height: 100%;
+                padding: 40px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+
+                .imgWrap {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 32px;
+                    border-radius: 16px;
+                    overflow: hidden;
+                    transition: transform 0.3s ease;
+                    height: 120px;
+                    width: 120px;
+
+                    .imagePlaceholder {
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(255, 255, 255, 0.1);
+                        border: 2px dashed rgba(255, 255, 255, 0.3);
+                        border-radius: 12px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: rgba(255, 255, 255, 0.7);
+                        font-size: 12px;
+                        font-weight: 500;
+                    }
+                }
+
+                h5 {
+                    color: rgba(255, 255, 255, 0.92);
+                    font-size: 24px;
+                    font-weight: 600;
+                    line-height: 32px;
+                    margin-bottom: 32px;
+                    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                    max-width: 280px;
+                }
+
+                p {
+                    color: rgba(255, 255, 255, 0.92);
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 28px;
+                    margin-bottom: 24px;
+                    max-width: 320px;
+                    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+                }
+
+                .ctaButton {
+                    background: rgba(0, 0, 0, 1);
+                    color: rgba(255, 255, 255, 1);
+                    border: none;
+                    padding: 16px 32px;
+                    border-radius: 50px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    text-decoration: none;
+                    display: inline-block;
+
+                    &:hover {
+                        background: rgba(255, 255, 255, 1);
+                        color: rgba(0, 0, 0, 1);
+                    }
+                }
             }
+        }
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: 24px;
+            padding: 0 24px;
+
+            .repeatItem {
+                min-height: 350px;
+
+                .cardContent {
+                    padding: 32px 24px;
+
+                    h5 {
+                        font-size: 22px;
+                        line-height: 28px;
+                    }
+
+                    p {
+                        font-size: 15px;
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 480px) {
+            padding: 0 20px;
+            gap: 20px;
         }
     }
 }

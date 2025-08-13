@@ -108,9 +108,13 @@ export default function ThirdSection() {
   return (
     <section className={styles.thirdSection}>
       <div className={`pageCenter ${styles.pageCenter}`}>
-        <h2>
-          Some of the big names <br /> We served
-        </h2>
+        <div className={styles.sectionHeader}>
+          <h2>Trusted by Industry Leaders</h2>
+          <p className={styles.desc}>
+            Proud to partner with some of the biggest names in sports and entertainment,
+            delivering cutting-edge solutions that drive success across the industry.
+          </p>
+        </div>
         <div className={styles.repeatSection}>
           <Slider {...settings}>
             {items.map((item, index) => (

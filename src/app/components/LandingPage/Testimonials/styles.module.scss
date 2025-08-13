@@ -1,98 +1,245 @@
 .testimonials {
-    margin-bottom: 136px;
+    margin-bottom: 80px;
+    padding: 60px 0;
 
-    h2 {
-        display: inline-block;
-        background: linear-gradient(135deg, #FFF 0%, #71717A 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 48.2px;
-        font-weight: 700;
-        line-height: 51.36px;
-        letter-spacing: -1.2px;
-        margin-bottom: 30px;
-    }
+    .sectionHeader {
+        text-align: center;
+        margin-bottom: 40px;
 
-    p.desc {
-        color: rgba(161, 161, 170, 0.80);
-        font-size: 17.9px;
-        font-weight: 400;
-        line-height: 28px;
-        max-width: 550px;
-        margin-bottom: 100px;
+        h2 {
+            font-size: 44px;
+            font-weight: 700;
+            line-height: 52px;
+            background: linear-gradient(135deg, #FFF 0%, #71717A 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 32px;
 
-        span {
-            color: #E4E4E7;
+            @media (max-width: 768px) {
+                font-size: 34px;
+                line-height: 42px;
+                margin-bottom: 24px;
+            }
         }
 
+        .desc {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28px;
+            max-width: 600px;
+            margin: 0 auto;
+
+            span {
+                color: rgba(255, 255, 255, 0.95);
+            }
+
+            @media (max-width: 768px) {
+                font-size: 16px;
+                line-height: 26px;
+            }
+        }
     }
 
+    .carouselContainer {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
 
-    .repeatSection {
-        max-width: 1350px;
+        .gradientFade {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 1), transparent);
+            z-index: 2;
+            pointer-events: none;
 
-        .repeatItem {
-            position: relative;
-            border-radius: 4px;
-            background: #0F0F0F;
-            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.00), 0 0 0 1px rgba(244, 244, 245, 0.10), 0 0 0 0 #FFF;
+            @media (max-width: 768px) {
+                width: 30px;
+            }
+        }
+
+        .gradientFadeRight {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60px;
+            height: 100%;
+            background: linear-gradient(to left, rgba(0, 0, 0, 1), transparent);
+            z-index: 2;
+            pointer-events: none;
+
+            @media (max-width: 768px) {
+                width: 30px;
+            }
+        }
+
+        .scrollContainer {
+            display: flex;
+            gap: 24px;
+            padding: 20px 0;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            
+            // Hide scrollbar
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            // Enable smooth scrolling on touch devices
+            -webkit-overflow-scrolling: touch;
+
+            @media (max-width: 768px) {
+                gap: 16px;
+                padding: 16px 0;
+            }
+        }
+
+        .testimonialCard {
+            flex: 0 0 auto;
+            width: 350px;
+            min-height: 240px;
             padding: 24px;
-            max-width: 310px;
+            border-radius: 20px;
+            background: rgba(15, 15, 15, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            scroll-snap-align: start;
+            transition: all 0.3s ease;
 
-            // Glow border
-            &::before {
-                content: "";
-                position: absolute;
-                inset: 0;
-                border-radius: inherit;
-                padding: 1px; // border thickness
-                background: linear-gradient(180deg, #8DB842, #3F521D); // glow colors
-                -webkit-mask:
-                    linear-gradient(#fff 0 0) content-box,
-                    linear-gradient(#fff 0 0);
-                -webkit-mask-composite: xor;
-                mask-composite: exclude;
-                pointer-events: none;
+            &:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+                border-color: rgba(255, 255, 255, 0.2);
+            }
+
+            .testimonialText {
+                color: rgba(255, 255, 255, 0.92);
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 28px;
+                font-style: italic;
+                margin-bottom: 20px;
+                flex-grow: 1;
             }
 
             .profile {
                 display: flex;
                 align-items: center;
-                gap: 8px;
-                margin-bottom: 16px;
+                gap: 15px;
+                margin-top: auto;
 
-                img {
+                .avatarPlaceholder {
                     width: 48px;
                     height: 48px;
-                    border-radius: 100%;
+                    border-radius: 50%;
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    font-weight: 600;
+                    font-size: 18px;
+                    flex-shrink: 0;
                 }
 
-                div {
+                .clientInfo {
+                    flex-grow: 1;
+
                     strong {
                         display: block;
-                        color: #FFF;
+                        color: rgba(255, 255, 255, 0.95);
                         font-size: 16px;
-                        font-weight: 400;
+                        font-weight: 600;
                         line-height: 20px;
+                        margin-bottom: 4px;
                     }
 
-                    span {
-                        color: rgba(255, 255, 255, 0.60);
-                        font-size: 16px;
-                        font-weight: 700;
-                        line-height: 20px;
+                    .position {
+                        display: block;
+                        color: rgba(255, 255, 255, 0.8);
+                        font-size: 14px;
+                        font-weight: 500;
+                        line-height: 18px;
+                        margin-bottom: 2px;
+                    }
+
+                    .company {
+                        display: block;
+                        color: #B5B5B5;
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 18px;
                     }
                 }
             }
 
-            .testimonialText {
-                color: #FFF;
-                font-size: 16px;
-                font-weight: 400;
-                line-height: 20px;
+            @media (max-width: 768px) {
+                width: 280px;
+                min-height: 220px;
+                padding: 20px;
+
+                .testimonialText {
+                    font-size: 16px;
+                    line-height: 26px;
+                }
             }
 
+            @media (max-width: 480px) {
+                width: 260px;
+                min-height: 200px;
+                padding: 18px;
+
+                .testimonialText {
+                    font-size: 15px;
+                    line-height: 24px;
+                }
+
+                .profile {
+                    .avatarPlaceholder {
+                        width: 40px;
+                        height: 40px;
+                        font-size: 16px;
+                    }
+
+                    .clientInfo {
+                        strong {
+                            font-size: 15px;
+                        }
+
+                        .position,
+                        .company {
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Reduced motion support
+    @media (prefers-reduced-motion: reduce) {
+        .carouselContainer {
+            .scrollContainer {
+                scroll-behavior: auto;
+            }
+
+            .testimonialCard {
+                transition: none;
+
+                &:hover {
+                    transform: none;
+                }
+            }
         }
     }
 }

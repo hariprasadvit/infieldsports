@@ -1,20 +1,97 @@
 :root {
   --background: #000000;
+  --foreground: #ffffff;
+  --max-width: 1200px;
+  --border-radius: 12px;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Roboto Mono',
+    'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Code', 'Droid Sans Mono', 'Courier New', monospace;
+
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+
+  // Typography scale
+  --heading-1: 72px;
+  --heading-1-line: 80px;
+  --heading-2: 44px;
+  --heading-2-line: 52px;
+  --heading-3: 34px;
+  --heading-3-line: 42px;
+  --heading-4: 24px;
+  --heading-4-line: 32px;
+  --body-large: 20px;
+  --body-large-line: 32px;
+  --body-medium: 18px;
+  --body-medium-line: 28px;
+  --body-small: 16px;
+  --body-small-line: 26px;
+
+  // Spacing scale
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 40px;
+  --space-2xl: 56px;
+  --space-3xl: 80px;
+
+  // Brand gradient colors
+  --gradient-green-start: #7fff00;
+  --gradient-green-mid: #32cd32;
+  --gradient-green-end: #228b22;
+  --gradient-yellow-start: #ffff00;
+  --gradient-yellow-mid: #ffd700;
+  --gradient-yellow-end: #ffb347;
+  --gradient-black-start: #1a1a1a;
+  --gradient-black-mid: #000000;
+  --gradient-black-end: #0d0d0d;
+
+  @media (max-width: 768px) {
+    --heading-1: 48px;
+    --heading-1-line: 56px;
+    --heading-2: 34px;
+    --heading-2-line: 42px;
+    --heading-3: 28px;
+    --heading-3-line: 36px;
+    --heading-4: 20px;
+    --heading-4-line: 28px;
+    --body-large: 18px;
+    --body-large-line: 28px;
+    --body-medium: 16px;
+    --body-medium-line: 26px;
+    --body-small: 15px;
+    --body-small-line: 24px;
+  }
+
+  @media (max-width: 480px) {
+    --heading-1: 36px;
+    --heading-1-line: 44px;
+    --heading-2: 28px;
+    --heading-2-line: 36px;
+    --heading-3: 24px;
+    --heading-3-line: 32px;
+    --heading-4: 18px;
+    --heading-4-line: 26px;
+  }
 }
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 * {
@@ -26,12 +103,97 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-  transition: all .3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 button {
-  transition: all .3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+// Typography classes for consistent styling
+h1, .heading-1 {
+  font-size: var(--heading-1);
+  line-height: var(--heading-1-line);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+h2, .heading-2 {
+  font-size: var(--heading-2);
+  line-height: var(--heading-2-line);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+h3, .heading-3 {
+  font-size: var(--heading-3);
+  line-height: var(--heading-3-line);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+h4, .heading-4 {
+  font-size: var(--heading-4);
+  line-height: var(--heading-4-line);
+  font-weight: 600;
+}
+
+.body-large {
+  font-size: var(--body-large);
+  line-height: var(--body-large-line);
+  font-weight: 400;
+}
+
+.body-medium {
+  font-size: var(--body-medium);
+  line-height: var(--body-medium-line);
+  font-weight: 400;
+}
+
+.body-small {
+  font-size: var(--body-small);
+  line-height: var(--body-small-line);
+  font-weight: 400;
+}
+
+// Section spacing utilities
+.section {
+  padding: var(--space-3xl) 0;
+
+  @media (max-width: 768px) {
+    padding: var(--space-2xl) 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: var(--space-xl) 0;
+  }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+
+  h2 {
+    margin-bottom: var(--space-lg);
+  }
+
+  p {
+    max-width: 640px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: var(--space-xl);
+
+    h2 {
+      margin-bottom: var(--space-md);
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,17 +202,293 @@ button {
   }
 }
 
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
-
-  li {}
 }
 
 .pageCenter {
-  display: table;
-  margin: 0 auto;
   width: 100%;
-  max-width: 1350px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+
+  @media (max-width: 768px) {
+    padding: 0 var(--space-lg);
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 var(--space-md);
+  }
+}
+
+// Card styles for consistency
+.card {
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+// Focus styles for accessibility
+:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .card {
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: rgba(255, 255, 255, 1) !important;
+  }
+}
+
+// Gradient animations and utilities
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradientFloat {
+  0%, 100% {
+    transform: translateY(0px);
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px);
+    filter: hue-rotate(30deg);
+  }
+}
+
+@keyframes scrollGradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+// Gradient utility classes
+.gradient-animated {
+  background: linear-gradient(270deg,
+    var(--gradient-green-start),
+    var(--gradient-green-mid),
+    var(--gradient-black-start),
+    var(--gradient-green-end));
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+}
+
+.gradient-green-yellow {
+  background: linear-gradient(135deg,
+    var(--gradient-green-start) 0%,
+    var(--gradient-yellow-mid) 50%,
+    var(--gradient-green-end) 100%);
+  background-size: 200% 200%;
+}
+
+.gradient-green-black {
+  background: linear-gradient(135deg,
+    var(--gradient-green-start) 0%,
+    var(--gradient-black-mid) 50%,
+    var(--gradient-green-end) 100%);
+  background-size: 200% 200%;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg,
+    var(--gradient-green-start) 0%,
+    var(--gradient-yellow-mid) 50%,
+    var(--gradient-green-end) 100%);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s ease infinite;
+}
+
+.text-gradient-green-black {
+  background: linear-gradient(135deg,
+    var(--gradient-green-start) 0%,
+    var(--gradient-black-start) 25%,
+    var(--gradient-green-mid) 50%,
+    var(--gradient-black-mid) 75%,
+    var(--gradient-green-end) 100%);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 8s ease infinite;
+}
+
+// Scroll-triggered animations
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-gradient-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+// Page-wide continuous gradient
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(ellipse 800px 600px at center,
+    rgba(144, 238, 144, 0.08) 0%,
+    rgba(152, 251, 152, 0.06) 20%,
+    rgba(50, 205, 50, 0.04) 40%,
+    transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+  animation: slowFloatingGradient 20s ease-in-out infinite;
+}
+
+// Remove individual section gradients for continuous flow
+.scroll-gradient-bg::before {
+  display: none;
+}
+
+@keyframes slowFloatingGradient {
+  0%, 100% {
+    transform: translateY(0px) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  33% {
+    transform: translateY(-30px) scale(1.1) rotate(1deg);
+    opacity: 1;
+  }
+  66% {
+    transform: translateY(10px) scale(0.95) rotate(-1deg);
+    opacity: 1;
+  }
+}
+
+@keyframes animateGradient {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+// Animated gradient border utility
+.animated-gradient-border {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: conic-gradient(from 0deg at 50% 50%,
+      #59B816 0%,
+      #B2D753 25%,
+      #59B816 50%,
+      #B2D753 75%,
+      #59B816 100%);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    animation: animatedGradientBorder 6s linear infinite;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+.animate-gradient-text {
+  background: linear-gradient(to right,
+    #32cd32,
+    #98fb98,
+    #87ceeb,
+    #ffff00,
+    #87ceeb,
+    #98fb98,
+    #32cd32);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animateGradient 4s ease-in-out infinite;
+}
+
+// Floating animation for sections
+.floating-section {
+  animation: gradientFloat 6s ease-in-out infinite;
+}
+
+// Performance optimizations
+@media (prefers-reduced-motion: reduce) {
+  .gradient-animated,
+  .text-gradient,
+  .text-gradient-green-black,
+  .floating-section {
+    animation: none !important;
+  }
+
+  .scroll-fade-in {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
