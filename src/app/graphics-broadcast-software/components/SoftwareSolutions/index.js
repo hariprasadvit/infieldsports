@@ -17,7 +17,7 @@ const softwareSolutions = [
     ],
     description: "Comprehensive scoring software that covers multiple sports with real-time updates and customizable templates.",
     cta: "Learn More About Kshetra",
-    gradient: "linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #000000 100%)",
+    gradient: "linear-gradient(135deg, #02062d 0%, #1a1a2e 50%, #000000 100%)",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const softwareSolutions = [
     ],
     description: "Advanced sponsor playback system for LED displays and various stadium installations with seamless integration.",
     cta: "Learn More About Brihmanas",
-    gradient: "linear-gradient(135deg, #1e40af 0%, #1f2937 50%, #111827 100%)",
+    gradient: "linear-gradient(135deg, #02062d 0%, #16213e 50%, #000000 100%)",
   },
   {
     id: 3,
@@ -47,7 +47,7 @@ const softwareSolutions = [
     ],
     description: "Professional replay system with integrated sponsor playback and branded graphics for enhanced viewer experience.",
     cta: "Learn More About Graphics on Air",
-    gradient: "linear-gradient(135deg, #1f2937 0%, #111827 50%, #000000 100%)",
+    gradient: "linear-gradient(135deg, #02062d 0%, #0f0f23 50%, #000000 100%)",
   },
 ];
 
