@@ -371,46 +371,36 @@ ul {
   overflow: hidden;
 }
 
-.scroll-gradient-bg::before {
+// Page-wide continuous gradient
+body::before {
   content: '';
-  position: absolute;
-  top: -100%;
+  position: fixed;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg,
-    transparent 0%,
-    rgba(144, 238, 144, 0.15) 30%,
-    rgba(152, 251, 152, 0.2) 50%,
-    rgba(143, 188, 143, 0.15) 70%,
-    transparent 100%);
-  transition: top 1.5s ease;
-  z-index: 0;
+  height: 100vh;
+  background: radial-gradient(ellipse at center,
+    rgba(152, 251, 152, 0.02) 0%,
+    rgba(144, 238, 144, 0.03) 30%,
+    transparent 70%);
+  z-index: -1;
   pointer-events: none;
+  animation: slowFloatingGradient 25s ease-in-out infinite;
 }
 
-.scroll-gradient-bg.active::before {
-  top: 100%;
+// Remove individual section gradients for continuous flow
+.scroll-gradient-bg::before {
+  display: none;
 }
 
-.scroll-gradient-bg.visible::before {
-  animation: visibleFadeDown 3s ease-in-out;
-}
-
-@keyframes visibleFadeDown {
-  0% {
-    top: -100%;
-    opacity: 0;
+@keyframes slowFloatingGradient {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.02;
   }
-  25% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 1;
-  }
-  100% {
-    top: 100%;
-    opacity: 0;
+  50% {
+    transform: translateY(-20px) scale(1.05);
+    opacity: 0.04;
   }
 }
 
