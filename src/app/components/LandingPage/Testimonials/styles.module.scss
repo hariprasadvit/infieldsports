@@ -1,44 +1,53 @@
 .testimonials {
-    margin-bottom: 136px;
+    margin-bottom: 80px;
+    padding: 60px 0;
 
-    h2 {
-        display: inline-block;
-        background: linear-gradient(135deg, #FFF 0%, #71717A 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 48.2px;
-        font-weight: 700;
-        line-height: 51.36px;
-        letter-spacing: -1.2px;
-        margin-bottom: 30px;
-    }
+    .sectionHeader {
+        text-align: center;
+        margin-bottom: 60px;
 
-    p.desc {
-        color: rgba(161, 161, 170, 0.80);
-        font-size: 17.9px;
-        font-weight: 400;
-        line-height: 28px;
-        max-width: 550px;
-        margin-bottom: 100px;
-
-        span {
-            color: #E4E4E7;
+        h2 {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFF 0%, #71717A 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 48.2px;
+            font-weight: 700;
+            line-height: 51.36px;
+            letter-spacing: -1.2px;
+            margin-bottom: 20px;
         }
 
-    }
+        .desc {
+            color: rgba(161, 161, 170, 0.80);
+            font-size: 17.9px;
+            font-weight: 400;
+            line-height: 28px;
+            max-width: 600px;
+            margin: 0 auto;
 
+            span {
+                color: #E4E4E7;
+            }
+        }
+    }
 
     .repeatSection {
         max-width: 1350px;
 
         .repeatItem {
             position: relative;
-            border-radius: 4px;
-            background: #0F0F0F;
-            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.00), 0 0 0 1px rgba(244, 244, 245, 0.10), 0 0 0 0 #FFF;
-            padding: 24px;
-            max-width: 310px;
+            border-radius: 16px;
+            background: rgba(15, 15, 15, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(244, 244, 245, 0.1);
+            padding: 30px;
+            margin: 0 15px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
 
             // Glow border
             &::before {
@@ -46,8 +55,8 @@
                 position: absolute;
                 inset: 0;
                 border-radius: inherit;
-                padding: 1px; // border thickness
-                background: linear-gradient(180deg, #8DB842, #3F521D); // glow colors
+                padding: 1px;
+                background: linear-gradient(180deg, #8DB842, #3F521D);
                 -webkit-mask:
                     linear-gradient(#fff 0 0) content-box,
                     linear-gradient(#fff 0 0);
@@ -56,43 +65,62 @@
                 pointer-events: none;
             }
 
-            .profile {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                margin-bottom: 16px;
-
-                img {
-                    width: 48px;
-                    height: 48px;
-                    border-radius: 100%;
-                }
-
-                div {
-                    strong {
-                        display: block;
-                        color: #FFF;
-                        font-size: 16px;
-                        font-weight: 400;
-                        line-height: 20px;
-                    }
-
-                    span {
-                        color: rgba(255, 255, 255, 0.60);
-                        font-size: 16px;
-                        font-weight: 700;
-                        line-height: 20px;
-                    }
-                }
-            }
-
             .testimonialText {
                 color: #FFF;
                 font-size: 16px;
                 font-weight: 400;
-                line-height: 20px;
+                line-height: 24px;
+                font-style: italic;
+                margin-bottom: 20px;
+                flex-grow: 1;
             }
 
+            .profile {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                margin-top: auto;
+
+                .avatarPlaceholder {
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 50%;
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    font-weight: 600;
+                    font-size: 18px;
+                }
+
+                .clientInfo {
+                    strong {
+                        display: block;
+                        color: #FFF;
+                        font-size: 16px;
+                        font-weight: 600;
+                        line-height: 20px;
+                        margin-bottom: 4px;
+                    }
+
+                    .position {
+                        display: block;
+                        color: rgba(255, 255, 255, 0.8);
+                        font-size: 14px;
+                        font-weight: 500;
+                        line-height: 18px;
+                    }
+
+                    .company {
+                        display: block;
+                        color: rgba(255, 255, 255, 0.6);
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 18px;
+                    }
+                }
+            }
         }
     }
 }
