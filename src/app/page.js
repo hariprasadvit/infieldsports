@@ -4,6 +4,7 @@ import HeroSection from "./components/LandingPage/HeroSection";
 import SecondSection from "./components/LandingPage/SecondSection";
 import Testimonials from "./components/LandingPage/Testimonials";
 import ThirdSection from "./components/LandingPage/ThirdSection";
+import Gallery from "./components/LandingPage/Gallery";
 import FooterForm from "./components/LandingPage/FooterForm";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <SecondSection />
       <ThirdSection />
       <FourthSection />
+      <Gallery />
       <Testimonials />
       <FooterForm />
     </div>
