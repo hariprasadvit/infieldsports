@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./styles.module.scss";
-import Spline from "@splinetool/react-spline/next";
 
 export default function HeroSection() {
   return (
@@ -14,7 +13,10 @@ export default function HeroSection() {
           whether on screen or stage.{" "}
         </p>
         <div className={styles.spline}>
-          <Spline scene="https://prod.spline.design/Oh0LB3HLQCmAV1Qm/scene.splinecode" />
+          {/* Spline component temporarily removed for performance */}
+          <div style={{ height: '400px', background: '#f0f0f0', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px' }}>
+            <p style={{ color: '#666' }}>3D Scene Placeholder</p>
+          </div>
         </div>
       </div>
     </section>
