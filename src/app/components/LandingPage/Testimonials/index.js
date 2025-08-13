@@ -50,28 +50,28 @@ export default function Testimonials() {
   return (
     <section className={styles.testimonials}>
       <div className={`pageCenter ${styles.pageCenter}`}>
-        <h2>What our Clients say</h2>
-        <p className={styles.desc}>
-          Our AI-driven assistant is designed to decode complex financial
-          figures and <span>illuminate key trends</span> in your business.
-        </p>
+        <div className={styles.sectionHeader}>
+          <h2>What Our Clients Say</h2>
+          <p className={styles.desc}>
+            Hear from industry leaders who trust our solutions to <span>power their success</span>
+            and deliver exceptional sports experiences to millions of fans worldwide.
+          </p>
+        </div>
         <div className={styles.repeatSection}>
           <Slider {...settings}>
             {testimonials.map((testimonial, index) => (
               <div className={styles.repeatItem} key={index}>
+                <div className={styles.testimonialText}>"{testimonial.text}"</div>
                 <div className={styles.profile}>
-                  <Image
-                    src={testimonial.img}
-                    alt="Client 1"
-                    width={48}
-                    height={48}
-                  />
-                  <div>
+                  <div className={styles.avatarPlaceholder}>
+                    <span>{testimonial.name.charAt(0)}</span>
+                  </div>
+                  <div className={styles.clientInfo}>
                     <strong>{testimonial.name}</strong>
-                    <span>{testimonial.company}</span>
+                    <span className={styles.position}>{testimonial.position}</span>
+                    <span className={styles.company}>{testimonial.company}</span>
                   </div>
                 </div>
-                <div className={styles.testimonialText}>{testimonial.text}</div>
               </div>
             ))}
           </Slider>
