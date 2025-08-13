@@ -40,7 +40,7 @@ export default function ExpertCTA() {
   };
 
   return (
-    <section className={styles.expertCTA}>
+    <section className={`${styles.expertCTA} floating-section`}>
       <div className={styles.container}>
         <div className={styles.content}>
           <h2>Talk to Our Expert for Installation</h2>
