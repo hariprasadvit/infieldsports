@@ -33,17 +33,18 @@ export default function SecondSection() {
   return (
     <section className={styles.secondSection}>
       <div className="pageCenter">
-        <h2>
-          Our Business Verticals <br /> Transforming Sports Technology
-        </h2>
-        <p className={styles.desc}>
-          Comprehensive solutions across three core areas. Experience our{" "}
-          <span>integrated ecosystem</span> that powers the future of sports entertainment.
-        </p>
+        <div className={styles.sectionHeader}>
+          <h2>Our Business Verticals</h2>
+          <h3>Transforming Sports Technology</h3>
+          <p className={styles.desc}>
+            Comprehensive solutions across three core areas. Experience our{" "}
+            <span>integrated ecosystem</span> that powers the future of sports entertainment.
+          </p>
+        </div>
         <div className={styles.repeatSection}>
           {businessVerticals.map((vertical) => (
-            <div 
-              className={styles.repeatItem} 
+            <div
+              className={styles.repeatItem}
               key={vertical.id}
               style={{
                 '--gradient': vertical.gradient,
@@ -62,10 +63,12 @@ export default function SecondSection() {
               }}
             >
               <div className={styles.imgWrap}>
-                <Image src={vertical.imageUrl} alt={vertical.title} width={300} height={200} style={{borderRadius: '12px'}} />
+                <div className={styles.imagePlaceholder}>
+                  <span>Image Placeholder</span>
+                </div>
               </div>
-              <h5 style={{marginTop: '20px', marginBottom: '15px'}}>{vertical.title}</h5>
-              <p style={{marginBottom: '20px', lineHeight: '1.6'}}>{vertical.description}</p>
+              <h5>{vertical.title}</h5>
+              <p>{vertical.description}</p>
               <CustomButton
                 className="knowMoreBtn"
                 type="link"
