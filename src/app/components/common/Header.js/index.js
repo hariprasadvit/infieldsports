@@ -10,6 +10,8 @@ import { useRouter } from "next/navigation";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +24,11 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleProductClick = (productPath) => {
+    router.push(productPath);
+    setProductsDropdownOpen(false);
+  };
 
   return (
     <div className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
