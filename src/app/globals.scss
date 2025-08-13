@@ -357,8 +357,8 @@ ul {
 // Scroll-triggered animations
 .scroll-fade-in {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(50px);
+  transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .scroll-fade-in.visible {
@@ -380,14 +380,38 @@ ul {
   height: 100%;
   background: linear-gradient(90deg,
     transparent 0%,
-    rgba(127, 255, 0, 0.1) 50%,
+    rgba(127, 255, 0, 0.2) 30%,
+    rgba(255, 215, 0, 0.15) 50%,
+    rgba(50, 205, 50, 0.2) 70%,
     transparent 100%);
-  transition: left 0.8s ease;
-  z-index: -1;
+  transition: left 1.5s ease;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .scroll-gradient-bg.active::before {
   left: 100%;
+}
+
+.scroll-gradient-bg.visible::before {
+  animation: sweepGradient 3s ease-in-out;
+}
+
+@keyframes sweepGradient {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
 }
 
 // Floating animation for sections
