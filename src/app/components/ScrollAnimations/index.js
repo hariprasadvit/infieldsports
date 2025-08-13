@@ -7,18 +7,23 @@ export default function ScrollAnimations() {
     // Intersection Observer for scroll-triggered animations
     const observerOptions = {
       root: null,
-      rootMargin: '0px',
-      threshold: 0.1
+      rootMargin: '-50px 0px -50px 0px',
+      threshold: [0.1, 0.3, 0.5]
     };
 
     const handleIntersection = (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          
+          // Add visible class with a slight delay for better effect
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, 100);
+
           // Add gradient background animation for sections
           if (entry.target.classList.contains('scroll-gradient-bg')) {
-            entry.target.classList.add('active');
+            setTimeout(() => {
+              entry.target.classList.add('active');
+            }, 200);
           }
         }
       });
@@ -26,13 +31,22 @@ export default function ScrollAnimations() {
 
     const observer = new IntersectionObserver(handleIntersection, observerOptions);
 
-    // Observe all elements with scroll animation classes
-    const elementsToObserve = document.querySelectorAll('.scroll-fade-in, .scroll-gradient-bg');
-    elementsToObserve.forEach(el => observer.observe(el));
+    // Wait for DOM to be fully loaded
+    const observeElements = () => {
+      const elementsToObserve = document.querySelectorAll('.scroll-fade-in, .scroll-gradient-bg');
+      elementsToObserve.forEach(el => {
+        observer.observe(el);
+      });
+    };
+
+    // Observe immediately and also after a short delay to catch dynamically added elements
+    observeElements();
+    const timeoutId = setTimeout(observeElements, 500);
 
     // Cleanup
     return () => {
-      elementsToObserve.forEach(el => observer.unobserve(el));
+      clearTimeout(timeoutId);
+      observer.disconnect();
     };
   }, []);
 
