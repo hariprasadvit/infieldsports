@@ -5,7 +5,7 @@ export default function HeroSection() {
   return (
     <section className={styles.heroSection}>
       <div className="pageCenter">
-        <h1>Transforming Events into State of the Art Experiences</h1>
+        <h1 className="animate-gradient-text">Transforming Events into State of the Art Experiences</h1>
         <p>
           As a dynamic and visionary company, we epitomize the art of crafting
           captivating experiences. Through a fusion of creativity, innovation,
