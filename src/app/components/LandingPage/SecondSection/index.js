@@ -58,7 +58,7 @@ export default function SecondSection() {
         <div className={styles.repeatSection}>
           {businessVerticals.map((vertical) => (
             <div
-              className={`${styles.repeatItem} ${(vertical.id === 1 || vertical.id === 3) ? styles.clickable : ''}`}
+              className={`${styles.repeatItem} ${(vertical.id === 1 || vertical.id === 2 || vertical.id === 3) ? styles.clickable : ''}`}
               key={vertical.id}
               style={{
                 background: vertical.background,
