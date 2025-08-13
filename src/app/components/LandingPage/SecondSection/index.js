@@ -13,21 +13,21 @@ const businessVerticals = [
     title: "Graphics & Broadcast Software",
     description:
       "Advanced graphics solutions and broadcast software for live sports events. Our cutting-edge technology delivers real-time graphics, scoring systems, and broadcast-ready content that enhances viewer experience and engagement.",
-    gradient: "linear-gradient(135deg, #02062d 0%, #1a1a2e 50%, #000000 100%)",
+    background: "rgba(15, 15, 15, 0.8)",
   },
   {
     id: 2,
     title: "AI & Analytics Platform",
     description:
       "Intelligent analytics and AI-powered solutions for sports performance optimization. We provide comprehensive data analysis, player tracking, and predictive insights that transform how teams and leagues understand their game.",
-    gradient: "linear-gradient(135deg, #02062d 0%, #16213e 50%, #000000 100%)",
+    background: "rgba(15, 15, 15, 0.8)",
   },
   {
     id: 3,
     title: "LED & Infrastructure Solutions",
     description:
       "Complete LED display systems and stadium infrastructure solutions. From indoor/outdoor LED installations to seating arrangements and gallery setups, we create immersive sporting environments that captivate audiences.",
-    gradient: "linear-gradient(135deg, #02062d 0%, #0f0f23 50%, #000000 100%)",
+    background: "rgba(15, 15, 15, 0.8)",
   },
 ];
 
