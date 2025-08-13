@@ -380,10 +380,11 @@ ul {
   height: 100%;
   background: linear-gradient(180deg,
     transparent 0%,
-    rgba(50, 205, 50, 0.03) 40%,
-    rgba(127, 255, 0, 0.05) 60%,
+    rgba(144, 238, 144, 0.15) 30%,
+    rgba(152, 251, 152, 0.2) 50%,
+    rgba(143, 188, 143, 0.15) 70%,
     transparent 100%);
-  transition: top 2s ease;
+  transition: top 1.5s ease;
   z-index: 0;
   pointer-events: none;
 }
@@ -393,19 +394,19 @@ ul {
 }
 
 .scroll-gradient-bg.visible::before {
-  animation: subtleFadeDown 4s ease-in-out;
+  animation: visibleFadeDown 3s ease-in-out;
 }
 
-@keyframes subtleFadeDown {
+@keyframes visibleFadeDown {
   0% {
     top: -100%;
     opacity: 0;
   }
-  30% {
-    opacity: 0.8;
+  25% {
+    opacity: 1;
   }
-  70% {
-    opacity: 0.8;
+  75% {
+    opacity: 1;
   }
   100% {
     top: 100%;
