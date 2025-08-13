@@ -1,12 +1,28 @@
+import { Inter } from "next/font/google";
+import "./globals.scss";
+import Header from "./components/common/Header.js/index.js";
+import Footer from "./components/common/Footer";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+  weight: ["300", "400", "500", "600", "700"],
+});
+
 export const metadata = {
   title: "Infield Sports",
-  description: "Sports application",
+  description: "Transforming Events into State of the Art Experiences",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${inter.variable}`}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
