@@ -61,6 +61,7 @@
             overflow: hidden;
             min-height: 600px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid rgba(255, 255, 255, 0.1);
 
             &::before {
                 content: '';
@@ -70,16 +71,16 @@
                 right: -3px;
                 bottom: -3px;
                 background: conic-gradient(from 0deg at 50% 50%,
-                    #59B816 0%,
-                    #B2D753 25%,
-                    #59B816 50%,
-                    #B2D753 75%,
-                    #59B816 100%);
+                    transparent 0%,
+                    #59B816 25%,
+                    #B2D753 50%,
+                    #59B816 75%,
+                    transparent 100%);
                 border-radius: 27px;
                 z-index: -1;
                 opacity: 0;
-                transition: opacity 0.8s ease;
-                animation: animatedGradientBorder 8s linear infinite;
+                transition: opacity 0.6s ease;
+                animation: animatedGradientBorder 4s linear infinite;
             }
             
             &:hover {
