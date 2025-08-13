@@ -79,37 +79,131 @@
                     border-color: rgba(144, 238, 144, 0.3);
                 }
 
-                .stepNumber {
-                    position: absolute;
-                    top: -16px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    width: 32px;
-                    height: 32px;
-                    background: linear-gradient(135deg, #32cd32 0%, #228b22 100%);
-                    border-radius: 50%;
+                .geometricShape {
+                    margin-bottom: 24px;
+                    height: 80px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 12px rgba(50, 205, 50, 0.3);
 
-                    span {
-                        color: white;
-                        font-size: 14px;
-                        font-weight: 700;
+                    @media (max-width: 768px) {
+                        height: 70px;
+                        margin-bottom: 20px;
                     }
                 }
 
-                .stepIcon {
-                    margin-bottom: 20px;
+                // Diamond shape
+                .diamond {
+                    .diamondInner {
+                        width: 60px;
+                        height: 60px;
+                        transform: rotate(45deg);
+                        border: 2px solid #59B816;
+                        position: relative;
 
-                    span {
-                        font-size: 48px;
-                        display: block;
-                        
-                        @media (max-width: 768px) {
-                            font-size: 40px;
+                        .diamondCore {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: 20px;
+                            height: 20px;
+                            background: #B2D753;
+                            border-radius: 2px;
                         }
+                    }
+                }
+
+                // Circles pattern
+                .circles {
+                    .circlesContainer {
+                        display: flex;
+                        gap: 8px;
+
+                        .circle {
+                            width: 20px;
+                            height: 20px;
+                            border-radius: 50%;
+                            background: linear-gradient(45deg, #59B816, #B2D753);
+                            animation: pulse 2s ease-in-out infinite;
+
+                            &:nth-child(2) {
+                                animation-delay: 0.3s;
+                            }
+
+                            &:nth-child(3) {
+                                animation-delay: 0.6s;
+                            }
+                        }
+                    }
+                }
+
+                // Grid pattern
+                .grid {
+                    .gridContainer {
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr);
+                        gap: 3px;
+                        width: 60px;
+                        height: 60px;
+
+                        .gridCell {
+                            background: #59B816;
+                            border-radius: 1px;
+                            opacity: 0.3;
+                            transition: opacity 0.3s ease;
+
+                            &:nth-child(odd) {
+                                opacity: 0.8;
+                            }
+
+                            &:nth-child(5n) {
+                                background: #B2D753;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+
+                // Hexagon shape
+                .hexagon {
+                    .hexagonContainer {
+                        .hexagon {
+                            width: 60px;
+                            height: 34.64px;
+                            background: linear-gradient(30deg, #59B816, #B2D753);
+                            position: relative;
+
+                            &::before,
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                width: 0;
+                                border-left: 30px solid transparent;
+                                border-right: 30px solid transparent;
+                            }
+
+                            &::before {
+                                bottom: 100%;
+                                border-bottom: 17.32px solid #59B816;
+                            }
+
+                            &::after {
+                                top: 100%;
+                                border-top: 17.32px solid #B2D753;
+                            }
+                        }
+                    }
+                }
+
+                @keyframes pulse {
+                    0%, 100% {
+                        transform: scale(1);
+                        opacity: 1;
+                    }
+                    50% {
+                        transform: scale(1.2);
+                        opacity: 0.7;
                     }
                 }
 
