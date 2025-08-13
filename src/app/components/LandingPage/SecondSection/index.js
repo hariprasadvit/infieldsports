@@ -47,34 +47,22 @@ export default function SecondSection() {
               className={styles.repeatItem}
               key={vertical.id}
               style={{
-                '--gradient': vertical.gradient,
-                transition: 'all 0.3s ease',
-                cursor: 'pointer'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = vertical.gradient;
-                e.currentTarget.style.transform = 'translateY(-10px)';
-                e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = '';
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '';
+                background: vertical.gradient,
               }}
             >
-              <div className={styles.imgWrap}>
-                <div className={styles.imagePlaceholder}>
-                  <span>Image Placeholder</span>
+              <div className={styles.cardOverlay}></div>
+              <div className={styles.cardContent}>
+                <div className={styles.imgWrap}>
+                  <div className={styles.imagePlaceholder}>
+                    <span>Image Placeholder</span>
+                  </div>
                 </div>
+                <h5>{vertical.title}</h5>
+                <p>{vertical.description}</p>
+                <button className={styles.ctaButton}>
+                  Know More
+                </button>
               </div>
-              <h5>{vertical.title}</h5>
-              <p>{vertical.description}</p>
-              <CustomButton
-                className="knowMoreBtn"
-                type="link"
-                linkUrl={`/services/${vertical.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
-                btnTxt="Know More"
-              />
             </div>
           ))}
         </div>
