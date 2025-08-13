@@ -57,7 +57,7 @@ export default function SecondSection() {
               className={`${styles.repeatItem} ${vertical.id === 1 ? styles.clickable : ''}`}
               key={vertical.id}
               style={{
-                background: vertical.gradient,
+                background: vertical.background,
               }}
               onClick={() => handleCardClick(vertical)}
             >
