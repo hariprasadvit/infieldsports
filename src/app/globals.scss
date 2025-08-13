@@ -36,6 +36,17 @@
   --space-2xl: 56px;
   --space-3xl: 80px;
 
+  // Brand gradient colors
+  --gradient-green-start: #7fff00;
+  --gradient-green-mid: #32cd32;
+  --gradient-green-end: #228b22;
+  --gradient-yellow-start: #ffff00;
+  --gradient-yellow-mid: #ffd700;
+  --gradient-yellow-end: #ffb347;
+  --gradient-black-start: #1a1a1a;
+  --gradient-black-mid: #000000;
+  --gradient-black-end: #0d0d0d;
+
   @media (max-width: 768px) {
     --heading-1: 48px;
     --heading-1-line: 56px;
