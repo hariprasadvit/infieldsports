@@ -68,7 +68,7 @@ export default function SoftwareSolutions() {
               className={styles.solutionCard}
               key={solution.id}
               style={{
-                background: solution.gradient,
+                background: solution.background,
               }}
             >
               <div className={styles.cardOverlay}></div>
