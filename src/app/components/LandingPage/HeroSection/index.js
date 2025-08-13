@@ -14,7 +14,7 @@ export default function HeroSection() {
         </p>
         <div className={styles.spline}>
           {/* Spline component temporarily removed for performance */}
-          <div style={{ height: '400px', background: '#f0f0f0', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px' }}>
+          <div style={{ height: '400px', background: 'rgba(0, 0, 0, 1)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px' }}>
             <p style={{ color: '#666' }}>3D Scene Placeholder</p>
           </div>
         </div>
