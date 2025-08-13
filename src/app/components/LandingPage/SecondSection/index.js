@@ -11,7 +11,6 @@ const businessVerticals = [
     title: "Graphics & Broadcast Software",
     description:
       "Advanced graphics solutions and broadcast software for live sports events. Our cutting-edge technology delivers real-time graphics, scoring systems, and broadcast-ready content that enhances viewer experience and engagement.",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fa02b160e79ed4b79a66181f74455bc85?format=webp&width=800",
     gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
   },
   {
@@ -19,7 +18,6 @@ const businessVerticals = [
     title: "AI & Analytics Platform",
     description:
       "Intelligent analytics and AI-powered solutions for sports performance optimization. We provide comprehensive data analysis, player tracking, and predictive insights that transform how teams and leagues understand their game.",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F071ae863ba4a436a90e452850823ec53?format=webp&width=800",
     gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
   },
   {
@@ -27,7 +25,6 @@ const businessVerticals = [
     title: "LED & Infrastructure Solutions",
     description:
       "Complete LED display systems and stadium infrastructure solutions. From indoor/outdoor LED installations to seating arrangements and gallery setups, we create immersive sporting environments that captivate audiences.",
-    imageUrl: "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fa02b160e79ed4b79a66181f74455bc85?format=webp&width=800",
     gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
   },
 ];
