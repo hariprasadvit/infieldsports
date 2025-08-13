@@ -44,8 +44,39 @@ export default function Header() {
             <li>
               <Link href="/case-studies">Case Studies</Link>
             </li>
-            <li>
-              <Link href="/products">Products</Link>
+            <li
+              className={styles.productsDropdown}
+              onMouseEnter={() => setProductsDropdownOpen(true)}
+              onMouseLeave={() => setProductsDropdownOpen(false)}
+            >
+              <span className={styles.productsToggle}>
+                Products
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+                  <path d="M1 1L6 6L11 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </span>
+              {productsDropdownOpen && (
+                <div className={styles.dropdownMenu}>
+                  <button
+                    onClick={() => handleProductClick('/graphics-broadcast-software')}
+                    className={styles.dropdownItem}
+                  >
+                    Graphics & Broadcast Software
+                  </button>
+                  <button
+                    onClick={() => handleProductClick('/ai-analytics-platform')}
+                    className={styles.dropdownItem}
+                  >
+                    AI & Analytics Platform
+                  </button>
+                  <button
+                    onClick={() => handleProductClick('/led-infrastructure-solutions')}
+                    className={styles.dropdownItem}
+                  >
+                    LED & Infrastructure Solutions
+                  </button>
+                </div>
+              )}
             </li>
             <li>
               <Link href="/career">Career</Link>
