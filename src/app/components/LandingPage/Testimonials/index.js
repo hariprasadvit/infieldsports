@@ -10,27 +10,31 @@ export default function Testimonials() {
   const testimonials = [
     {
       img: test1,
-      name: "Brooklyn Simmons",
-      company: "manam",
-      text: "Sit ut diam bibendum dolor. Ullamcorper pharetra nibh eget vitae pulvinar. Placerat sapien, dolor, aenean vivamus in tincidunt et. Mauris dolor vestibulum et lacus a ante orci.",
+      name: "Sarah Johnson",
+      company: "Premier Sports League",
+      position: "Technology Director",
+      text: "Infield Sports transformed our entire stadium experience. Their LED solutions and broadcast software have elevated our game presentation to championship levels.",
     },
     {
       img: test1,
-      name: "Esther Howard",
-      company: "Offmax",
-      text: "Vitae tellus bibendum nibh integer auctor pretium sed. Sollicitudin tristique euismod elit.",
+      name: "Michael Chen",
+      company: "Global Sports Network",
+      position: "Head of Operations",
+      text: "The AI analytics platform provided insights we never thought possible. Game-changing technology that's revolutionized how we understand sports performance.",
     },
     {
       img: test1,
-      name: "Arlene McCoy",
-      company: "bloopixel",
-      text: "Eu eu eget lorem commodo sagittis enim in viverra. Urna egestas ipsum gravida tempor. Libero, consectetur urna in enim magnis. Est.",
+      name: "Emma Rodriguez",
+      company: "Olympic Committee",
+      position: "Innovation Lead",
+      text: "Outstanding partnership from concept to execution. Their graphics and broadcast solutions made our events truly spectacular for audiences worldwide.",
     },
     {
       img: test1,
-      name: "Jane Cooper",
-      company: "unpexel",
-      text: "Amet aliquam, volutpat nisl, duis sed at. Vehicula proin consectetur risus dictumst nec amet consequat at tempus. Ornare dapibus nunc fames nibh morbi viverra eu sed mattis.",
+      name: "David Thompson",
+      company: "Professional Football League",
+      position: "Technical Manager",
+      text: "Reliability, innovation, and exceptional support. Infield Sports delivered beyond our expectations and continues to push the boundaries of sports technology.",
     },
   ];
   const settings = {
