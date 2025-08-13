@@ -4,6 +4,8 @@ import React from "react";
 import styles from "./styles.module.scss";
 import Image from "next/image";
 import CustomButton from "../../CustomButton";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const businessVerticals = [
   {
