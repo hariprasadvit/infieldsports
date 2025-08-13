@@ -396,12 +396,16 @@ body::before {
 
 @keyframes slowFloatingGradient {
   0%, 100% {
-    transform: translateY(0px) scale(1);
-    opacity: 0.02;
+    transform: translateY(0px) scale(1) rotate(0deg);
+    opacity: 1;
   }
-  50% {
-    transform: translateY(-20px) scale(1.05);
-    opacity: 0.04;
+  33% {
+    transform: translateY(-30px) scale(1.1) rotate(1deg);
+    opacity: 1;
+  }
+  66% {
+    transform: translateY(10px) scale(0.95) rotate(-1deg);
+    opacity: 1;
   }
 }
 
