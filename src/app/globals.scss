@@ -380,42 +380,41 @@ ul {
 .scroll-gradient-bg::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: -100%;
+  top: -100%;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg,
+  background: linear-gradient(180deg,
     transparent 0%,
-    rgba(127, 255, 0, 0.2) 30%,
-    rgba(255, 215, 0, 0.15) 50%,
-    rgba(50, 205, 50, 0.2) 70%,
+    rgba(50, 205, 50, 0.03) 40%,
+    rgba(127, 255, 0, 0.05) 60%,
     transparent 100%);
-  transition: left 1.5s ease;
+  transition: top 2s ease;
   z-index: 0;
   pointer-events: none;
 }
 
 .scroll-gradient-bg.active::before {
-  left: 100%;
+  top: 100%;
 }
 
 .scroll-gradient-bg.visible::before {
-  animation: sweepGradient 3s ease-in-out;
+  animation: subtleFadeDown 4s ease-in-out;
 }
 
-@keyframes sweepGradient {
+@keyframes subtleFadeDown {
   0% {
-    left: -100%;
+    top: -100%;
     opacity: 0;
   }
-  20% {
-    opacity: 1;
+  30% {
+    opacity: 0.8;
   }
-  80% {
-    opacity: 1;
+  70% {
+    opacity: 0.8;
   }
   100% {
-    left: 100%;
+    top: 100%;
     opacity: 0;
   }
 }
