@@ -81,7 +81,9 @@ export default function SecondSection() {
                     handleCardClick(vertical);
                   }}
                 >
-                  {vertical.id === 1 ? 'Explore Solutions' : vertical.id === 2 ? 'Explore AI Platform' : vertical.id === 3 ? 'View Stadium Solutions' : 'Know More'}
+                  {vertical.id === 1 && 'Explore Solutions'}
+                  {vertical.id === 2 && 'Explore AI Platform'}
+                  {vertical.id === 3 && 'View Stadium Solutions'}
                 </button>
               </div>
             </div>
