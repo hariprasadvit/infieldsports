@@ -1,0 +1,150 @@
+.useCases {
+    padding: 80px 0;
+    margin-bottom: 80px;
+
+    .sectionHeader {
+        text-align: center;
+        margin-bottom: var(--space-3xl);
+
+        h2 {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFF 0%, #71717A 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: var(--heading-2);
+            font-weight: 700;
+            line-height: var(--heading-2-line);
+            letter-spacing: -0.025em;
+            margin-bottom: var(--space-lg);
+        }
+
+        p.desc {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: var(--body-medium);
+            font-weight: 400;
+            line-height: var(--body-medium-line);
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            margin-bottom: var(--space-2xl);
+        }
+    }
+
+    .useCasesGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        @media (max-width: 1024px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: 24px;
+            padding: 0 24px;
+        }
+
+        .useCaseCard {
+            background: rgba(15, 15, 15, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+
+            &:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+                border-color: rgba(89, 184, 22, 0.3);
+                background: rgba(15, 15, 15, 0.8);
+            }
+
+            .cardIcon {
+                margin-bottom: 24px;
+
+                span {
+                    font-size: 56px;
+                    display: block;
+                    
+                    @media (max-width: 768px) {
+                        font-size: 48px;
+                    }
+                }
+            }
+
+            .cardHeader {
+                margin-bottom: 24px;
+
+                h3 {
+                    color: rgba(255, 255, 255, 0.95);
+                    font-size: 24px;
+                    font-weight: 700;
+                    line-height: 32px;
+                    margin-bottom: 12px;
+                    
+                    @media (max-width: 768px) {
+                        font-size: 22px;
+                        line-height: 30px;
+                    }
+                }
+
+                .subtitle {
+                    color: rgba(89, 184, 22, 0.9);
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 24px;
+                    
+                    @media (max-width: 768px) {
+                        font-size: 15px;
+                        line-height: 22px;
+                    }
+                }
+            }
+
+            .benefitsList {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                text-align: left;
+
+                li {
+                    color: rgba(255, 255, 255, 0.8);
+                    font-size: 15px;
+                    font-weight: 400;
+                    line-height: 22px;
+                    margin-bottom: 12px;
+                    padding-left: 20px;
+                    position: relative;
+
+                    &::before {
+                        content: '✓';
+                        position: absolute;
+                        left: 0;
+                        color: rgba(89, 184, 22, 0.8);
+                        font-weight: 600;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    @media (max-width: 768px) {
+                        font-size: 14px;
+                        line-height: 20px;
+                    }
+                }
+            }
+
+            @media (max-width: 768px) {
+                padding: 28px 20px;
+            }
+        }
+    }
+}
