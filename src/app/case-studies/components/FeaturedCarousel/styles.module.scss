@@ -312,9 +312,9 @@
     }
     
     &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(74, 144, 226, 0.3);
-      
+      background: rgba(255, 255, 255, 1);
+      color: rgba(0, 0, 0, 1);
+
       svg {
         transform: translateX(4px);
       }
