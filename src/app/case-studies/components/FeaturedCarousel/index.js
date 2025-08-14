@@ -14,8 +14,6 @@ export default function FeaturedCarousel() {
       description: "Our revolutionary AI-powered scoring system transformed cricket analytics at one of India's most prestigious venues. Real-time ball tracking, automated statistics, and instant broadcast graphics elevated the viewing experience for millions of fans worldwide.",
       image: null,
       tags: ["AI Analytics", "Cricket", "Real-time"],
-      quote: "The level of accuracy and speed in scoring has revolutionized how we present cricket to our global audience.",
-      author: "Stadium Director",
       metrics: {
         accuracy: "99.8%",
         speed: "<1s",
@@ -31,8 +29,6 @@ export default function FeaturedCarousel() {
       description: "Complete digital transformation featuring 360-degree LED perimeter displays, IoT-enabled crowd management, and intelligent power distribution systems. Setting new standards for modern stadium experiences in cricket.",
       image: null,
       tags: ["Stadium Tech", "LED Infrastructure", "IoT"],
-      quote: "This technology has completely transformed how fans experience cricket at our venue.",
-      author: "Operations Manager",
       metrics: {
         displays: "360°",
         resolution: "4K",
@@ -48,8 +44,6 @@ export default function FeaturedCarousel() {
       description: "Advanced player tracking and tactical analysis system providing real-time insights for Premier League matches. Our AI algorithms analyze 22 players simultaneously with unprecedented accuracy.",
       image: null,
       tags: ["AI Analytics", "Football", "Player Tracking"],
-      quote: "The tactical insights provided have given our team a significant competitive advantage.",
-      author: "Head Coach",
       metrics: {
         players: "22",
         accuracy: "95%",
@@ -65,8 +59,6 @@ export default function FeaturedCarousel() {
       description: "Revolutionary AI-driven broadcast automation covering cricket's biggest matches. Automatic camera switching, intelligent graphics generation, and commentary assistance delivering world-class production quality.",
       image: null,
       tags: ["Broadcast AI", "Cricket", "Automation"],
-      quote: "The production quality achieved through automation exceeds our highest expectations.",
-      author: "Broadcast Director",
       metrics: {
         cameras: "12",
         automation: "95%",
