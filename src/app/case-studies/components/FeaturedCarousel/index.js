@@ -175,45 +175,45 @@ export default function FeaturedCarousel() {
               </div>
             ))}
           </div>
+        </div>
 
-          <div className={styles.controls}>
-            <button 
-              onClick={prevSlide}
-              className={styles.navBtn}
-              aria-label="Previous slide"
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <polyline points="15,18 9,12 15,6"/>
-              </svg>
-            </button>
+        <div className={styles.controls}>
+          <button
+            onClick={prevSlide}
+            className={styles.navBtn}
+            aria-label="Previous slide"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <polyline points="15,18 9,12 15,6"/>
+            </svg>
+          </button>
 
-            <div className={styles.indicators}>
-              {featuredCases.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`${styles.indicator} ${index === currentSlide ? styles.active : ''}`}
-                  aria-label={`Go to slide ${index + 1}`}
-                >
-                  <div className={styles.indicatorProgress}>
-                    {index === currentSlide && isAutoPlaying && (
-                      <div className={styles.progressBar}></div>
-                    )}
-                  </div>
-                </button>
-              ))}
-            </div>
-
-            <button 
-              onClick={nextSlide}
-              className={styles.navBtn}
-              aria-label="Next slide"
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <polyline points="9,18 15,12 9,6"/>
-              </svg>
-            </button>
+          <div className={styles.indicators}>
+            {featuredCases.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`${styles.indicator} ${index === currentSlide ? styles.active : ''}`}
+                aria-label={`Go to slide ${index + 1}`}
+              >
+                <div className={styles.indicatorProgress}>
+                  {index === currentSlide && isAutoPlaying && (
+                    <div className={styles.progressBar}></div>
+                  )}
+                </div>
+              </button>
+            ))}
           </div>
+
+          <button
+            onClick={nextSlide}
+            className={styles.navBtn}
+            aria-label="Next slide"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <polyline points="9,18 15,12 9,6"/>
+            </svg>
+          </button>
         </div>
       </div>
     </section>
