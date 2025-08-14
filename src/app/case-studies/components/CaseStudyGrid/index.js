@@ -225,7 +225,9 @@ export default function CaseStudyGrid({ filters }) {
           {displayedStudies.map((study, index) => (
             <div key={study.id} className={styles.caseCard}>
               <div className={styles.imageContainer}>
-                <img src={study.image} alt={study.title} />
+                <div className={styles.imagePlaceholder}>
+                  <span>Case Study Image</span>
+                </div>
                 <div className={styles.overlay}>
                   <div className={styles.tags}>
                     {study.tags.map((tag, tagIndex) => (
