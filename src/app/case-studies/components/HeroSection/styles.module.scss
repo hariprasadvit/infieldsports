@@ -1,0 +1,213 @@
+.heroSection {
+  background: transparent;
+  padding: 120px 0 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+      rgba(144, 238, 144, 0.03) 0%,
+      rgba(152, 251, 152, 0.05) 50%,
+      rgba(143, 188, 143, 0.03) 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 18s ease infinite;
+    z-index: -1;
+  }
+
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-xl);
+
+    @media (max-width: 768px) {
+      padding: 0 var(--space-lg);
+    }
+
+    @media (max-width: 480px) {
+      padding: 0 var(--space-md);
+    }
+  }
+
+  h1 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 80px;
+    letter-spacing: -1.8px;
+    text-align: center;
+    max-width: 950px;
+    margin: 0 auto 32px;
+    padding-top: 58px;
+
+    @media (max-width: 768px) {
+      font-size: 48px;
+      line-height: 56px;
+      letter-spacing: -1.2px;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 36px;
+      line-height: 44px;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+    max-width: 720px;
+    margin: 0 auto 40px;
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+      line-height: 28px;
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 16px;
+      line-height: 26px;
+      margin-bottom: 24px;
+    }
+  }
+
+  .visualSection {
+    max-width: 800px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      padding: 0 20px;
+    }
+  }
+
+  .imageCollage {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .imageCard {
+      aspect-ratio: 1;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+
+      &::before {
+        content: '';
+        background: conic-gradient(
+          #59B816 20deg,
+          transparent 120deg
+        );
+        width: 150%;
+        height: 150%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        animation: rotate 4s linear infinite;
+        z-index: 1;
+      }
+
+      &::after {
+        content: '';
+        width: calc(100% - 4px);
+        height: calc(100% - 4px);
+        background: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        border-radius: 14px;
+        z-index: 2;
+      }
+
+      &:hover::before {
+        opacity: 1;
+      }
+
+      &:hover {
+        transform: translateY(-8px);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+        z-index: 3;
+        border-radius: 14px;
+        margin: 2px;
+      }
+
+      .overlay {
+        display: none;
+      }
+    }
+  }
+
+  .scrollIndicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #b8c4d0;
+    font-size: 0.9rem;
+    animation: bounce 2s infinite;
+    
+    .scrollDot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #59B816;
+      animation: pulse 2s infinite;
+    }
+    
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
