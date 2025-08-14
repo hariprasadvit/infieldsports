@@ -7,9 +7,14 @@
     margin: 0;
   }
 
-  // Ensure proper section spacing
+  // Ensure proper section spacing to prevent collisions
   > section:not(:first-child) {
     position: relative;
+    margin-top: var(--space-lg);
+
+    @media (max-width: 768px) {
+      margin-top: var(--space-md);
+    }
   }
 
   // Add subtle separators between sections
