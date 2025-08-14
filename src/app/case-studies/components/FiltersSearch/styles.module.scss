@@ -31,14 +31,14 @@
   }
 
   .searchSection {
-    margin-bottom: 1.5rem;
-    
+    margin-bottom: var(--space-lg);
+
     .sticky & {
-      margin-bottom: 1rem;
+      margin-bottom: var(--space-md);
     }
-    
+
     @media (max-width: 1024px) {
-      margin-bottom: 1rem;
+      margin-bottom: var(--space-md);
     }
   }
 
