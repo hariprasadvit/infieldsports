@@ -201,17 +201,20 @@
   }
 
   .textSection {
-    padding: 3rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+
     @media (max-width: 1024px) {
-      padding: 2rem;
-    }
-    
-    @media (max-width: 768px) {
       padding: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      padding: 1rem;
     }
   }
 
