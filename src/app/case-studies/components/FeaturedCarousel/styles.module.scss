@@ -290,14 +290,16 @@
   }
 
   .caseStudyBtn {
-    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
-    color: #ffffff;
+    background: rgba(0, 0, 0, 1);
+    color: rgba(255, 255, 255, 1);
     border: none;
-    padding: 1rem 2rem;
-    border-radius: 8px;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-weight: 500;
+    text-decoration: none;
     display: flex;
     align-items: center;
     gap: 0.5rem;
