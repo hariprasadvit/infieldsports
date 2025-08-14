@@ -17,15 +17,6 @@ export default function HeroSection() {
           Explore how Infield Sports has transformed stadiums, events, and broadcasts worldwide with cutting-edge technology and innovative solutions.
         </p>
 
-        <div className={styles.visualSection}>
-          <div className={styles.imageCollage}>
-            {projectImages.map((image, index) => (
-              <div key={index} className={styles.imageCard}>
-                <img src={image} alt={`Project ${index + 1}`} />
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
