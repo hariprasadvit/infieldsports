@@ -1,14 +1,6 @@
 import styles from "./styles.module.scss";
 
 export default function HeroSection() {
-  const projectImages = [
-    "/landing/imgOne.svg",
-    "/landing/imgTwo.svg",
-    "/landing/imgThree.svg",
-    "/landing/imgFour.svg",
-    "/landing/imgFive.svg"
-  ];
-
   return (
     <section className={styles.heroSection}>
       <div className="pageCenter">
