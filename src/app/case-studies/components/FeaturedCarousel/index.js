@@ -122,7 +122,9 @@ export default function FeaturedCarousel() {
               >
                 <div className={styles.slideContent}>
                   <div className={styles.imageSection}>
-                    <img src={caseStudy.image} alt={caseStudy.title} />
+                    <div className={styles.imagePlaceholder}>
+                      <span>Featured Case Study Image</span>
+                    </div>
                     <div className={styles.imageOverlay}>
                       <div className={styles.tags}>
                         {caseStudy.tags.map((tag, tagIndex) => (
