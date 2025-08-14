@@ -1,28 +1,32 @@
 .filtersSearch {
-  background: rgba(26, 35, 50, 0.95);
+  background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(184, 196, 208, 0.1);
-  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--space-lg) 0;
   transition: all 0.3s ease;
   z-index: 100;
-  
+
   &.sticky {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(10, 15, 28, 0.98);
+    background: rgba(0, 0, 0, 0.95);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    padding: 1rem 0;
+    padding: var(--space-md) 0;
   }
 
   .container {
-    max-width: 1400px;
+    max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 2rem;
-    
+    padding: 0 var(--space-xl);
+
     @media (max-width: 768px) {
-      padding: 0 1rem;
+      padding: 0 var(--space-lg);
+    }
+
+    @media (max-width: 480px) {
+      padding: 0 var(--space-md);
     }
   }
 
@@ -57,22 +61,22 @@
     .searchInput {
       width: 100%;
       padding: 1rem 1rem 1rem 3rem;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(184, 196, 208, 0.2);
-      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--border-radius);
       color: #ffffff;
       font-size: 1rem;
       transition: all 0.3s ease;
-      
+
       &::placeholder {
-        color: #b8c4d0;
+        color: rgba(255, 255, 255, 0.6);
       }
-      
+
       &:focus {
         outline: none;
-        border-color: #4a90e2;
-        background: rgba(255, 255, 255, 0.15);
-        box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        border-color: #98fb98;
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 0 2px rgba(152, 251, 152, 0.2);
       }
     }
     
