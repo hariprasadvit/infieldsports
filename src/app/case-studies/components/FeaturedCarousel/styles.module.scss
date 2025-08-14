@@ -1,6 +1,6 @@
 .featuredCarousel {
-  padding: 80px 0;
-  background: linear-gradient(180deg, #1a2332 0%, #0a0f1c 100%);
+  padding: var(--space-3xl) 0;
+  background: transparent;
   position: relative;
   overflow: hidden;
 
@@ -11,40 +11,65 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(ellipse at center, rgba(74, 144, 226, 0.05) 0%, transparent 70%);
+    background: linear-gradient(135deg,
+      rgba(144, 238, 144, 0.03) 0%,
+      rgba(152, 251, 152, 0.05) 50%,
+      rgba(143, 188, 143, 0.03) 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 18s ease infinite;
     pointer-events: none;
   }
 
+  @media (max-width: 768px) {
+    padding: var(--space-2xl) 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: var(--space-xl) 0;
+  }
+
   .container {
-    max-width: 1400px;
+    max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 2rem;
-    
+    padding: 0 var(--space-xl);
+
     @media (max-width: 768px) {
-      padding: 0 1rem;
+      padding: 0 var(--space-lg);
+    }
+
+    @media (max-width: 480px) {
+      padding: 0 var(--space-md);
     }
   }
 
   .header {
     text-align: center;
-    margin-bottom: 4rem;
-    
+    margin-bottom: var(--space-2xl);
+
     h2 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      color: #ffffff;
-      margin: 0 0 1rem 0;
-      font-weight: 600;
-      background: linear-gradient(135deg, #ffffff 0%, #4a90e2 100%);
+      display: inline-block;
+      background: linear-gradient(135deg, #FFF 0%, #71717A 100%);
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-clip: text;
+      font-size: var(--heading-2);
+      font-weight: 700;
+      line-height: var(--heading-2-line);
+      letter-spacing: -0.025em;
+      margin-bottom: var(--space-lg);
     }
-    
+
     p {
-      color: #b8c4d0;
-      font-size: 1.1rem;
-      max-width: 600px;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: var(--body-medium);
+      font-weight: 400;
+      line-height: var(--body-medium-line);
+      max-width: 640px;
       margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      margin-bottom: var(--space-xl);
     }
   }
 
