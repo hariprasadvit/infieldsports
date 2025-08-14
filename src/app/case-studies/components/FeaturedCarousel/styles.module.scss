@@ -336,25 +336,18 @@
   }
 
   .controls {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    z-index: 10;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: var(--space-lg);
+    padding: var(--space-md);
 
     @media (max-width: 768px) {
-      position: relative;
-      bottom: auto;
-      left: auto;
-      transform: none;
-      justify-content: center;
-      padding: var(--space-md);
-      background: rgba(0, 0, 0, 0.8);
-      margin: 0;
-      border-radius: 8px;
+      gap: 1rem;
+      margin-top: var(--space-md);
+      padding: var(--space-sm);
     }
   }
 
