@@ -159,11 +159,6 @@ export default function FeaturedCarousel() {
                       ))}
                     </div>
 
-                    <blockquote className={styles.quote}>
-                      <p>"{caseStudy.quote}"</p>
-                      <cite>— {caseStudy.author}</cite>
-                    </blockquote>
-
                     <button className={styles.caseStudyBtn}>
                       Read Full Case Study
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
