@@ -337,20 +337,20 @@
       .pageBtn {
         background: rgba(255, 255, 255, 0.1);
         color: #ffffff;
-        border: 1px solid rgba(184, 196, 208, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.2);
         padding: 0.5rem 1rem;
         border-radius: 6px;
         cursor: pointer;
         transition: all 0.3s ease;
-        
+
         &:disabled {
           opacity: 0.5;
           cursor: not-allowed;
         }
-        
+
         &:hover:not(:disabled) {
           background: rgba(255, 255, 255, 0.2);
-          border-color: #4a90e2;
+          border-color: #59B816;
         }
       }
       
@@ -361,21 +361,21 @@
         .pageNumber {
           background: rgba(255, 255, 255, 0.1);
           color: #ffffff;
-          border: 1px solid rgba(184, 196, 208, 0.2);
+          border: 1px solid rgba(255, 255, 255, 0.2);
           padding: 0.5rem 0.75rem;
           border-radius: 6px;
           cursor: pointer;
           transition: all 0.3s ease;
           min-width: 40px;
-          
+
           &.active {
-            background: #4a90e2;
-            border-color: #4a90e2;
+            background: #59B816;
+            border-color: #59B816;
           }
-          
+
           &:hover:not(.active) {
             background: rgba(255, 255, 255, 0.2);
-            border-color: #4a90e2;
+            border-color: #59B816;
           }
         }
       }
