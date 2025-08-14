@@ -1,12 +1,27 @@
 .caseStudies {
   min-height: 100vh;
   position: relative;
-  
+  background: #0a0f1c;
+
   .sectionSpacing {
     padding: 80px 0;
-    
+
     @media (max-width: 768px) {
       padding: 40px 0;
+    }
+  }
+
+  // Ensure smooth scrolling for sticky filters
+  scroll-behavior: smooth;
+
+  // Add padding top when filters become sticky
+  &:has(.filtersSearch.sticky) {
+    .featuredCarousel {
+      padding-top: 120px;
+
+      @media (max-width: 768px) {
+        padding-top: 100px;
+      }
     }
   }
 }

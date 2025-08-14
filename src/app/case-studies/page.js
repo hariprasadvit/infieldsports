@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import styles from "./page.module.scss";
 import HeroSection from "./components/HeroSection";
 import FiltersSearch from "./components/FiltersSearch";
@@ -9,13 +11,25 @@ import ExpertCTA from "../components/LandingPage/ExpertCTA";
 import ScrollAnimations from "../components/ScrollAnimations";
 
 export default function CaseStudies() {
+  const [filters, setFilters] = useState({
+    searchTerm: "",
+    solutionType: "",
+    sport: "",
+    region: "",
+    year: ""
+  });
+
+  const handleFiltersChange = (newFilters) => {
+    setFilters(newFilters);
+  };
+
   return (
     <div className={styles.caseStudies}>
       <ScrollAnimations />
       <HeroSection />
-      <FiltersSearch />
+      <FiltersSearch onFiltersChange={handleFiltersChange} />
       <FeaturedCarousel />
-      <CaseStudyGrid />
+      <CaseStudyGrid filters={filters} />
       <div className="scroll-fade-in scroll-gradient-bg">
         <Gallery />
       </div>
