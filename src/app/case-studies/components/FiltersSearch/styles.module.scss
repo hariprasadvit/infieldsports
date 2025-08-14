@@ -200,23 +200,23 @@
     }
     
     .filterSelect {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(184, 196, 208, 0.2);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 6px;
       color: #ffffff;
       padding: 0.5rem 0.75rem;
       font-size: 0.9rem;
       cursor: pointer;
       transition: all 0.3s ease;
-      
+
       &:focus {
         outline: none;
-        border-color: #4a90e2;
-        background: rgba(255, 255, 255, 0.15);
+        border-color: #98fb98;
+        background: rgba(255, 255, 255, 0.1);
       }
-      
+
       option {
-        background: #1a2332;
+        background: rgba(0, 0, 0, 0.9);
         color: #ffffff;
       }
     }
@@ -224,8 +224,8 @@
 
   .clearAllBtn {
     background: transparent;
-    border: 1px solid #e74c3c;
-    color: #e74c3c;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.8);
     padding: 0.5rem 1rem;
     border-radius: 6px;
     font-size: 0.9rem;
@@ -233,15 +233,16 @@
     transition: all 0.3s ease;
     height: fit-content;
     align-self: flex-end;
-    
+
     @media (max-width: 1024px) {
       align-self: stretch;
       margin-top: 0.5rem;
     }
-    
+
     &:hover {
-      background: #e74c3c;
+      background: rgba(255, 255, 255, 0.1);
       color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.5);
     }
   }
 }
