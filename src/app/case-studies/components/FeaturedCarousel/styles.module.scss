@@ -294,32 +294,6 @@
     }
   }
 
-  .quote {
-    margin: 0 0 1.5rem 0;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-left: 4px solid #59B816;
-    border-radius: 8px;
-    max-width: 100%;
-    overflow: hidden;
-
-    p {
-      color: #ffffff;
-      font-style: italic;
-      font-size: 1rem;
-      line-height: 1.5;
-      margin: 0 0 0.5rem 0;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-    }
-
-    cite {
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 0.9rem;
-      font-style: normal;
-      word-wrap: break-word;
-    }
-  }
 
   .caseStudyBtn {
     background: rgba(0, 0, 0, 1);
