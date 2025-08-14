@@ -207,8 +207,8 @@
     
     .year {
       display: inline-block;
-      background: rgba(74, 144, 226, 0.1);
-      color: #4a90e2;
+      background: rgba(89, 184, 22, 0.1);
+      color: #59B816;
       padding: 0.25rem 0.75rem;
       border-radius: 4px;
       font-size: 0.85rem;
@@ -255,13 +255,13 @@
         display: block;
         font-size: 1.5rem;
         font-weight: 700;
-        color: #4a90e2;
+        color: #59B816;
         margin-bottom: 0.25rem;
       }
       
       .metricLabel {
         font-size: 0.85rem;
-        color: #b8c4d0;
+        color: rgba(255, 255, 255, 0.7);
         text-transform: capitalize;
       }
     }
@@ -271,7 +271,7 @@
     margin: 0 0 2rem 0;
     padding: 1.5rem;
     background: rgba(255, 255, 255, 0.05);
-    border-left: 4px solid #4a90e2;
+    border-left: 4px solid #59B816;
     border-radius: 8px;
     
     p {
@@ -283,7 +283,7 @@
     }
     
     cite {
-      color: #b8c4d0;
+      color: rgba(255, 255, 255, 0.7);
       font-size: 0.9rem;
       font-style: normal;
     }
