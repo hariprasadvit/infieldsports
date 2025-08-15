@@ -1,0 +1,28 @@
+.heroSection {
+  padding: calc(var(--space-3xl) + 60px) 0 var(--space-3xl);
+  text-align: center;
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding: calc(var(--space-2xl) + 60px) 0 var(--space-2xl);
+  }
+
+  @media (max-width: 480px) {
+    padding: calc(var(--space-xl) + 60px) 0 var(--space-xl);
+  }
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+
+  h1 {
+    margin-bottom: var(--space-lg);
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
