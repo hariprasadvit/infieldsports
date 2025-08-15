@@ -29,13 +29,6 @@
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
   }
 
-  // Responsive adjustments
-  @media (max-width: 768px) {
-    > section:not(:first-child):not(:last-child)::before {
-      width: 40px;
-    }
-  }
-
   // Smooth scroll behavior
   scroll-behavior: smooth;
 
@@ -43,4 +36,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    > section:not(:first-child):not(:last-child)::before {
+      width: 40px;
+    }
+  }
 }
