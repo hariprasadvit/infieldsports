@@ -1,0 +1,193 @@
+.locationContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.locationHeader {
+  text-align: center;
+
+  @media (max-width: 1024px) {
+    text-align: left;
+  }
+
+  h2 {
+    margin-bottom: var(--space-md);
+    color: #fff;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 400px;
+    margin: 0 auto;
+
+    @media (max-width: 1024px) {
+      margin: 0;
+    }
+  }
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 480px) {
+    padding: var(--space-md);
+    gap: var(--space-sm);
+  }
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--gradient-green-start), var(--gradient-green-mid));
+  color: #000;
+  flex-shrink: 0;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  @media (max-width: 480px) {
+    width: 40px;
+    height: 40px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.contactContent {
+  flex: 1;
+
+  h3 {
+    margin-bottom: var(--space-xs);
+    color: #fff;
+  }
+
+  p,
+  a {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+  }
+
+  a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--gradient-green-start);
+    }
+  }
+}
+
+.mapContainer {
+  margin-top: var(--space-lg);
+}
+
+.mapPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3xl);
+  background: rgba(255, 255, 255, 0.02);
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    padding: var(--space-2xl);
+  }
+
+  @media (max-width: 480px) {
+    padding: var(--space-xl);
+  }
+}
+
+.mapIcon {
+  margin-bottom: var(--space-md);
+  color: var(--gradient-green-start);
+
+  svg {
+    width: 48px;
+    height: 48px;
+
+    @media (max-width: 480px) {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
+
+.mapPlaceholder p {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+}
+
+// Accessibility improvements
+.contactItem:focus-within {
+  outline: 2px solid var(--gradient-green-start);
+  outline-offset: 2px;
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .contactItem {
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .iconWrapper {
+    background: var(--gradient-green-start);
+  }
+
+  .contactContent h3,
+  .contactContent p,
+  .contactContent a {
+    color: rgba(255, 255, 255, 1);
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .contactItem,
+  .mapPlaceholder {
+    transition: none;
+  }
+
+  .contactItem:hover {
+    transform: none;
+  }
+}
