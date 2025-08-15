@@ -1,0 +1,20 @@
+.contactPage {
+  min-height: 100vh;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(15, 15, 15, 1) 100%);
+}
+
+.contactContent {
+  padding: var(--space-xl) 0;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+}
