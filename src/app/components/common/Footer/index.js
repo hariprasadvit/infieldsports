@@ -57,58 +57,46 @@ export default function Footer() {
 
           <div className={styles.linksSection}>
             <div className={styles.footerLinks}>
-              <h6>Quick Links</h6>
+              <h6>Company</h6>
               <ul role="list">
                 <li>
                   <Link href="/about">About Us</Link>
                 </li>
                 <li>
-                  <Link href="/solutions">Our Solutions</Link>
-                </li>
-                <li>
                   <Link href="/case-studies">Case Studies</Link>
                 </li>
                 <li>
-                  <Link href="/news">News & Media</Link>
-                </li>
-                <li>
-                  <Link href="/careers">Careers</Link>
+                  <Link href="/career">Careers</Link>
                 </li>
               </ul>
             </div>
 
             <div className={styles.footerLinks}>
-              <h6>Services</h6>
+              <h6>Solutions</h6>
               <ul role="list">
                 <li>
-                  <Link href="/services/graphics">Graphics & Broadcast</Link>
+                  <Link href="/graphics-broadcast-software">Graphics & Broadcast</Link>
                 </li>
                 <li>
-                  <Link href="/services/ai-analytics">AI & Analytics</Link>
+                  <Link href="/ai-analytics-platform">AI & Analytics</Link>
                 </li>
                 <li>
-                  <Link href="/services/led-infrastructure">LED Solutions</Link>
-                </li>
-                <li>
-                  <Link href="/support">Technical Support</Link>
+                  <Link href="/led-infrastructure-solutions">LED Infrastructure</Link>
                 </li>
               </ul>
             </div>
 
             <div className={styles.footerLinks}>
-              <h6>Connect</h6>
+              <h6>Support</h6>
               <ul role="list">
                 <li>
-                  <Link href="/contact">Contact Us</Link>
+                  <Link href="/contact-us">Contact Us</Link>
                 </li>
                 <li>
-                  <Link href="/partnerships">Partnerships</Link>
+                  <Link href="/contact-us">Technical Support</Link>
                 </li>
                 <li>
-                  <Link href="/blog">Blog</Link>
-                </li>
-                <li>
-                  <Link href="/newsletter">Newsletter</Link>
+                  <Link href="/contact-us">Partnerships</Link>
                 </li>
               </ul>
             </div>

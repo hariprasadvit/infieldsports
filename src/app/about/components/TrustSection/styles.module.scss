@@ -1,0 +1,185 @@
+.trustSection {
+  padding: var(--space-3xl) 0;
+  position: relative;
+
+  // Add gradient background overlay
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse 800px 400px at center,
+      rgba(127, 255, 0, 0.05) 0%,
+      rgba(50, 205, 50, 0.03) 20%,
+      transparent 60%);
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    padding: var(--space-2xl) 0;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.header {
+  margin-bottom: var(--space-3xl);
+
+  h2 {
+    margin-bottom: var(--space-lg);
+    color: #fff;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: var(--space-2xl);
+  }
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  margin-bottom: var(--space-3xl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+  }
+
+  @media (max-width: 480px) {
+    gap: var(--space-md);
+  }
+}
+
+.statCard {
+  padding: var(--space-xl);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(127, 255, 0, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    padding: var(--space-lg);
+  }
+}
+
+.statNumber {
+  font-size: 48px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--gradient-green-start), var(--gradient-green-mid));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: var(--space-xs);
+  line-height: 1;
+
+  @media (max-width: 768px) {
+    font-size: 40px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 36px;
+  }
+}
+
+.statLabel {
+  font-size: var(--body-small);
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ctaSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-2xl) 0;
+
+  @media (max-width: 768px) {
+    gap: var(--space-md);
+    padding: var(--space-xl) 0;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gradient-green-start), var(--gradient-green-mid));
+  color: #000;
+
+  svg {
+    width: 60px;
+    height: 60px;
+  }
+
+  @media (max-width: 768px) {
+    width: 60px;
+    height: 60px;
+
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+.ctaSection h3 {
+  color: #fff;
+  margin: 0;
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .statCard {
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .statNumber {
+    background: var(--gradient-green-start);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .statCard {
+    transition: none;
+  }
+
+  .statCard:hover {
+    transform: none;
+  }
+}

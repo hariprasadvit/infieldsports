@@ -1,0 +1,160 @@
+.formContainer {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: var(--space-2xl);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    padding: var(--space-xl);
+  }
+
+  @media (max-width: 480px) {
+    padding: var(--space-lg);
+  }
+}
+
+.formHeader {
+  margin-bottom: var(--space-2xl);
+  text-align: center;
+
+  h2 {
+    margin-bottom: var(--space-md);
+    color: #fff;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: var(--space-xl);
+  }
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.label {
+  font-size: var(--body-small);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.02em;
+}
+
+.input,
+.select {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: var(--body-medium);
+  font-family: inherit;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 52px;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--gradient-green-start);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(127, 255, 0, 0.1);
+  }
+
+  &:hover:not(:focus) {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.07);
+  }
+
+  &.error {
+    border-color: #ff4757;
+    background: rgba(255, 71, 87, 0.1);
+  }
+}
+
+.select {
+  cursor: pointer;
+  
+  option {
+    background: #1a1a1a;
+    color: #fff;
+    padding: var(--space-sm);
+  }
+}
+
+.errorMessage {
+  font-size: var(--body-small);
+  color: #ff4757;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.submitContainer {
+  margin-top: var(--space-lg);
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    margin-top: var(--space-md);
+  }
+}
+
+// Focus accessibility improvements
+.input:focus-visible,
+.select:focus-visible {
+  outline: 2px solid var(--gradient-green-start);
+  outline-offset: 2px;
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .formContainer {
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .input,
+  .select {
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .label {
+    color: rgba(255, 255, 255, 1);
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .formContainer,
+  .input,
+  .select {
+    transition: none;
+  }
+
+  .formContainer:hover {
+    transform: none;
+  }
+}
