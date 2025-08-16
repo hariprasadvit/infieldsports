@@ -13,7 +13,6 @@
 }
 
 .heroContent {
-  max-width: 900px;
   margin: 0 auto;
 
   .badge {
@@ -29,14 +28,6 @@
     backdrop-filter: blur(10px);
   }
 
-  h1 {
-    margin-bottom: var(--space-xl);
-    line-height: 1.1;
-
-    @media (max-width: 768px) {
-      margin-bottom: var(--space-lg);
-    }
-  }
 
   p {
     color: rgba(255, 255, 255, 0.85);
@@ -47,5 +38,29 @@
       color: var(--gradient-green-start);
       font-weight: 600;
     }
+  }
+}
+
+.mainHeading {
+  margin-bottom: var(--space-xl);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+
+  @media (max-width: 768px) {
+    margin-bottom: var(--space-lg);
+  }
+}
+
+.headingText {
+  font-size: 60px;
+  font-weight: 700;
+
+  @media (max-width: 768px) {
+    font-size: 48px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 36px;
   }
 }
