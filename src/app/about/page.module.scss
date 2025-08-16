@@ -1,0 +1,29 @@
+.aboutPage {
+  min-height: 100vh;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(15, 15, 15, 1) 100%);
+
+  // Smooth scroll behavior
+  scroll-behavior: smooth;
+
+  // Optimize text rendering
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // Reset any default margins on sections
+  section {
+    margin: 0;
+  }
+
+  // Ensure proper section spacing
+  > section:not(:first-child) {
+    position: relative;
+  }
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    > section:not(:first-child):not(:last-child)::before {
+      width: 40px;
+    }
+  }
+}
