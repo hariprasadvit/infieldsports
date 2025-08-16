@@ -7,12 +7,17 @@ export default function HeroSection() {
       <div className="pageCenter">
         <div className={styles.heroContent}>
           <div className={styles.badge}>About Us</div>
-          <h1 className="heading-1">
-            We Turn Sports <span className="text-gradient">Complexity</span> & Technology Challenges
+          <h1 className={styles.mainHeading}>
+            <span className={styles.headingText}>We Turn Sports </span>
+            <span className={`text-gradient ${styles.headingText}`}>Complexity</span>
+            <span className={styles.headingText}> & Technology Challenges</span>
             <br />
-            To <span className="text-gradient">Elegant Solutions</span> & 
+            <span className={styles.headingText}>To </span>
+            <span className={`text-gradient ${styles.headingText}`}>Elegant Solutions</span>
+            <span className={styles.headingText}> & </span>
             <br />
-            Absolute <span className="text-gradient">Performance</span>
+            <span className={styles.headingText}>Absolute </span>
+            <span className={`text-gradient ${styles.headingText}`}>Performance</span>
           </h1>
           <p className="body-large">
             <strong>Infield Sports</strong> crafts state-of-the-art sports technology solutions that 
